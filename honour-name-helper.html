@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Honour Name Helper: Fit a Family Name In, Fairly | Middle Names Generator</title>
-<meta name="description" content="Torn between two family names? The honour name helper scores both middle-name orders, tests single honour names, and suggests modern variants of dated family names.">
+<meta name="description" content="Torn between two family names? The honour name helper scores both middle-name orders, tests single honour names, and suggests modern variants of dated.">
 <link rel="canonical" href="https://middlenamesgenerator.com/honour-name-helper.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#5D4E8C">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=15432">
 <style>
 .order-card { background: var(--paper); border-radius: 14px; padding: 18px; margin-top: 14px; }
 .order-card.best { outline: 3px solid var(--gold); }
@@ -23,10 +23,28 @@
 .table-scroll { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); margin: 1rem 0; }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
- {"@type":"Question","name":"How do you choose between two family names for a middle name?","acceptedAnswer":{"@type":"Answer","text":"The fairest fixes are: use both as a double middle name and let sound decide the order; use one now and plan the other for a future child; or use a modern variant of the harder name so both sides are honoured. When couples explain that the order was chosen purely for rhythm, families almost always accept it."}},
- {"@type":"Question","name":"Does the order of two middle names mean anything?","acceptedAnswer":{"@type":"Answer","text":"Traditionally no — parents overwhelmingly report choosing the order that sounds best, not ranking relatives. Sharing a sound-based reason (this order avoids two vowels colliding, for example) defuses most family sensitivities."}}
-]}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you choose between two family names?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use both as a double middle and let sound choose the order, reserve one for a future child out loud, or modernise the harder name with a linked variant. All three keep the honour and the peace."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the order of two middle names mean anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No ranking is implied by tradition: and parents overwhelmingly report ordering by sound. Sharing that reason is the diplomacy."
+      }
+    }
+  ]
+}
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://middlenamesgenerator.com/"}, {"@type": "ListItem", "position": 2, "name": "Honour Name Helper", "item": "https://middlenamesgenerator.com/honour-name-helper.html"}]}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4138594802747479" crossorigin="anonymous"></script>
@@ -38,6 +56,10 @@
     <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span> Middle Names Generator</a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html">Generator</a>
+      <a href="middle-names-for-girls.html">Girls</a>
+      <a href="middle-names-for-boys.html">Boys</a>
+      <a href="themes.html">Themes</a>
+      <a href="guides.html">Guides</a>
       <a href="index.html#free-features">All Free Features</a>
       <a href="full-name-checker.html">Name Checker</a>
       <a href="initials-checker.html">Initials</a>
@@ -54,7 +76,7 @@
   <div class="wrap">
     <p class="kicker">For the hardest naming question of all: family</p>
     <h1>Honour name helper</h1>
-    <p class="lede">Two grandmothers, one baby. The most emotional dilemma in naming, solved the diplomatic way: test one family name, or both together — the tool scores every order so the <em>sound</em> makes the decision, not the family politics.</p>
+    <p class="lede">Two grandmothers, one baby. The most emotional dilemma in naming, solved the diplomatic way: test one family name, or both together: the tool scores every order so the <em>sound</em> makes the decision, not the family politics.</p>
 
     <div class="tool-card">
       <div class="tool-grid">
@@ -63,7 +85,7 @@
         <div class="field"><label for="hon1">Family name to honour</label><input type="text" id="hon1" placeholder="Margaret" autocomplete="off"></div>
       </div>
       <div class="tool-grid" style="margin-top:14px;">
-        <div class="field" style="grid-column: 1 / -1;"><label for="hon2">Second family name (optional — for a double middle)</label><input type="text" id="hon2" placeholder="Patricia" autocomplete="off"></div>
+        <div class="field" style="grid-column: 1 / -1;"><label for="hon2">Second family name (optional: for a double middle)</label><input type="text" id="hon2" placeholder="Patricia" autocomplete="off"></div>
       </div>
       <div class="tool-actions">
         <button class="btn" id="checkBtn">Compare the options</button>
@@ -84,13 +106,13 @@
 <h2>The three diplomatic escapes from the two-grandmothers problem</h2>
 <p>Naming forums are full of the same anguished thread: both sides of the family expect the honour, there's one middle-name slot, and someone's feelings are on the line. Three moves resolve it in practice:</p>
 <ul class="content-list">
-  <li><strong>Use both, and let sound pick the order.</strong> A double middle honours everyone; the tool above tells you which order flows better. "We put Margaret first because Patricia collides with the surname" is an explanation nobody can argue with — parents who've done it report exactly this reasoning kept the peace.</li>
+  <li><strong>Use both, and let sound pick the order.</strong> A double middle honours everyone; the tool above tells you which order flows better. "We put Margaret first because Patricia collides with the surname" is an explanation nobody can argue with: parents who've done it report exactly this reasoning kept the peace.</li>
   <li><strong>Use one now, bank one deliberately.</strong> If more children are hoped for, saying so out loud ("Patricia is reserved for a sister") converts a snub into a plan.</li>
-  <li><strong>Modernise the harder name.</strong> Loved your nan, can't love "Gertrude"? A variant keeps the thread of honour with a name your child will enjoy carrying — table below.</li>
+  <li><strong>Modernise the harder name.</strong> Loved your nan, can't love "Gertrude"? A variant keeps the thread of honour with a name your child will enjoy carrying: table below.</li>
 </ul>
 
 <h2>Modernising a dated family name</h2>
-<p>Every variant here has a genuine link to the original — a diminutive, a shared root, or an international form — so the honour survives the update:</p>
+<p>Every variant here has a genuine link to the original: a diminutive, a shared root, or an international form: so the honour survives the update:</p>
 <div class="table-scroll">
 <table class="mod-table">
   <thead><tr><th>Family name</th><th>Modern variants that keep the link</th></tr></thead>
@@ -116,14 +138,14 @@
   </tbody>
 </table>
 </div>
-<p>Type any variant into the tool above with your surname to check the flow — or run it through the <a href="index.html">full generator</a> alongside non-family options.</p>
+<p>Type any variant into the tool above with your surname to check the flow: or run it through the <a href="index.html">full generator</a> alongside non-family options.</p>
 
 <h2>The etiquette, briefly and honestly</h2>
-<p>Parents who've navigated this report two things consistently. First, the order of a double middle carries no traditional meaning — families who ask are almost always satisfied by "this order sounded better," especially with a concrete reason attached. Second, the surviving hurt in these stories comes from surprise, not from the choice itself: telling grandparents the plan (and the sound-based reason) before the announcement costs nothing and prevents most of the grief. And if you're honouring with a <em>double</em> middle, read the practical side first: <a href="can-you-have-two-middle-names.html">can you have two middle names?</a></p>
+<p>Parents who've navigated this report two things consistently. First, the order of a double middle carries no traditional meaning: families who ask are almost always satisfied by "this order sounded better," especially with a concrete reason attached. Second, the surviving hurt in these stories comes from surprise, not from the choice itself: telling grandparents the plan (and the sound-based reason) before the announcement costs nothing and prevents most of the grief. And if you're honouring with a <em>double</em> middle, read the practical side first: <a href="can-you-have-two-middle-names.html">can you have two middle names?</a></p>
 
 <h2>Frequently asked questions</h2>
 <details class="faq"><summary>How do you choose between two family names?</summary><div class="faq-body"><p>Use both as a double middle and let sound choose the order, reserve one for a future child out loud, or modernise the harder name with a linked variant. All three keep the honour and the peace.</p></div></details>
-<details class="faq"><summary>Does the order of two middle names mean anything?</summary><div class="faq-body"><p>No ranking is implied by tradition — and parents overwhelmingly report ordering by sound. Sharing that reason is the diplomacy.</p></div></details>
+<details class="faq"><summary>Does the order of two middle names mean anything?</summary><div class="faq-body"><p>No ranking is implied by tradition: and parents overwhelmingly report ordering by sound. Sharing that reason is the diplomacy.</p></div></details>
 
 
 <h2>Popular middle name lists</h2>
@@ -134,7 +156,7 @@
 <h2>More names and tools</h2>
 <div class="card-grid">
   <a class="tool-link-card" href="vintage-middle-names.html"><span class="emoji" aria-hidden="true">🕰️</span><h3>Vintage Middle Names</h3><p>The full old-name treasury, testable live.</p></a>
-  <a class="tool-link-card" href="can-you-have-two-middle-names.html"><span class="emoji" aria-hidden="true">📋</span><h3>Two Middle Names Guide</h3><p>Passports, forms and airline quirks — the practical truth.</p></a>
+  <a class="tool-link-card" href="can-you-have-two-middle-names.html"><span class="emoji" aria-hidden="true">📋</span><h3>Two Middle Names Guide</h3><p>Passports, forms and airline quirks: the practical truth.</p></a>
   <a class="tool-link-card" href="index.html"><span class="emoji" aria-hidden="true">✨</span><h3>Middle Name Generator</h3><p>Non-family options, scored against your surname.</p></a>
 </div>
 
@@ -166,28 +188,11 @@
     <div>
       <h4>Middle Names by Name</h4>
       <ul>
+        <li><a href="middle-names-for-girls.html">Middle names for girls (all)</a></li>
+        <li><a href="middle-names-for-boys.html">Middle names for boys (all)</a></li>
         <li><a href="middle-names-olivia.html">Middle names for Olivia</a></li>
-        <li><a href="middle-names-amelia.html">Middle names for Amelia</a></li>
-        <li><a href="middle-names-isla.html">Middle names for Isla</a></li>
-        <li><a href="middle-names-ava.html">Middle names for Ava</a></li>
-        <li><a href="middle-names-freya.html">Middle names for Freya</a></li>
         <li><a href="middle-names-noah.html">Middle names for Noah</a></li>
-        <li><a href="middle-names-oliver.html">Middle names for Oliver</a></li>
-        <li><a href="middle-names-george.html">Middle names for George</a></li>
-        <li><a href="middle-names-leo.html">Middle names for Leo</a></li>
-        <li><a href="middle-names-muhammad.html">Middle names for Muhammad</a></li>
-        <li><a href="middle-names-emmanuel.html">Middle names for Emmanuel</a></li>
-        <li><a href="middle-names-lily.html">Middle names for Lily</a></li>
-        <li><a href="middle-names-ivy.html">Middle names for Ivy</a></li>
-        <li><a href="middle-names-florence.html">Middle names for Florence</a></li>
-        <li><a href="middle-names-willow.html">Middle names for Willow</a></li>
-        <li><a href="middle-names-mia.html">Middle names for Mia</a></li>
-        <li><a href="middle-names-grace.html">Middle names for Grace</a></li>
-        <li><a href="middle-names-arthur.html">Middle names for Arthur</a></li>
-        <li><a href="middle-names-theodore.html">Middle names for Theodore</a></li>
-        <li><a href="middle-names-oscar.html">Middle names for Oscar</a></li>
-        <li><a href="middle-names-henry.html">Middle names for Henry</a></li>
-        <li><a href="middle-names-archie.html">Middle names for Archie</a></li>
+        <li><a href="directory.html">Every page A–Z</a></li>
       </ul>
     </div>
     <div>
@@ -221,7 +226,7 @@
     </div>
   </div>
   <div class="foot-note">
-    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun — nothing here is professional advice.</p>
+    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun: nothing here is professional advice.</p>
   </div>
 </footer>
 
@@ -231,7 +236,7 @@
   <button class="btn small ghost" data-choice="reject" style="color:#E8E6F5;border-color:#55527A;">Essential only</button>
 </div>
 
-<script src="engine.js?v=12"></script>
+<script src="engine.js?v=15432"></script>
 <script>
 (function(){
   const $ = id => document.getElementById(id);
@@ -246,7 +251,7 @@
       const a = seq[i], b = seq[i + 1];
       const endA = a.slice(-1), startB = b.charAt(0);
       if (endA === startB) issues.push(cap(a) + " → " + cap(b) + " share the sound \u201C" + endA.toUpperCase() + "\u201D and can blur");
-      else if (VOWELS.includes(endA) && VOWELS.includes(startB)) issues.push(cap(a) + " → " + cap(b) + " is a vowel-to-vowel join — say it aloud");
+      else if (VOWELS.includes(endA) && VOWELS.includes(startB)) issues.push(cap(a) + " → " + cap(b) + " is a vowel-to-vowel join: say it aloud");
     }
     return issues;
   }
@@ -262,7 +267,7 @@
       '<div class="checks"></div>';
     div.querySelector("h3 span").textContent = full;
     const checks = issues.length
-      ? issues.map(t => ({ ok: false, title: t, detail: "Not a dealbreaker — a reason. Quote it if the family asks about the order." }))
+      ? issues.map(t => ({ ok: false, title: t, detail: "Not a dealbreaker: a reason. Quote it if the family asks about the order." }))
       : [{ ok: true, title: "Clean joins throughout", detail: "Every name ends and the next begins with distinct sounds." }];
     NTF.renderChecks(div.querySelector(".checks"), checks);
     return { div, issueCount: issues.length, full };
@@ -299,8 +304,8 @@
       const note = document.createElement("p");
       note.style.cssText = "margin-top:12px;font-size:0.9rem;color:var(--ink-soft);";
       note.textContent = a.issueCount === b.issueCount
-        ? "Both orders are equally clean — this one is truly a heart decision (or a coin toss no relative can dispute)."
-        : "The highlighted order has fewer sound collisions — that's your diplomatic, quotable reason.";
+        ? "Both orders are equally clean: this one is truly a heart decision (or a coin toss no relative can dispute)."
+        : "The highlighted order has fewer sound collisions: that's your diplomatic, quotable reason.";
       wrap.appendChild(note);
     }
     $("result").classList.add("show");
@@ -315,6 +320,6 @@
   });
 })();
 </script>
-<script src="gate.js?v=12"></script>
+<script src="gate.js?v=15432"></script>
 </body>
 </html>
