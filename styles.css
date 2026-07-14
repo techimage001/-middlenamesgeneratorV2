@@ -613,3 +613,16 @@ h2 { letter-spacing: -0.02em; }
   .mng-signin { padding: 7px 14px; font-size: .78rem; }
   .mng-avatar { width: 34px; height: 34px; font-size: .9rem; }
 }
+
+
+/* Breadcrumbs */
+.crumbs { font-size: .8rem; color: var(--ink-soft); margin: 0 0 18px; font-weight: 700; }
+.crumbs a { color: var(--plum); text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.crumbs span { opacity: .55; margin: 0 2px; }
+
+/* Meaning tables */
+.meaning-table { width:100%; border-collapse:collapse; margin:16px 0 20px; font-size:.92rem; box-shadow:var(--shadow-sm); border-radius:14px; overflow:hidden; }
+.meaning-table th { background:var(--plum); color:#fff; text-align:left; padding:11px 14px; font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; }
+.meaning-table td { padding:10px 14px; border-bottom:1px solid var(--line); background:var(--white); }
+.meaning-table tr:last-child td { border-bottom:none; }

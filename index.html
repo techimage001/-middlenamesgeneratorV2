@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Middle Name Generator: Names Scored With Your Surname</title>
-<meta name="description" content="Free middle name generator that scores every suggestion against your actual first name and surname — rhythm, initials and flow, with reasons. Hear any combination aloud.">
+<meta name="description" content="Free middle name generator that scores every suggestion against your actual first name and surname, rhythm, initials and flow, with reasons. Hear any.">
 <link rel="canonical" href="https://middlenamesgenerator.com/">
-<meta property="og:title" content="Middle Name Generator — suggestions scored with your surname">
+<meta property="og:title" content="Middle Name Generator: suggestions scored with your surname">
 <meta property="og:description" content="Not another random list: every middle name is scored against your real surname, with reasons.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://middlenamesgenerator.com/">
@@ -16,7 +16,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#5D4E8C">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=15432">
 <style>
 .gen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-top: 22px; }
 .gen-card {
@@ -62,14 +62,38 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How does this middle name generator work?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Enter a first name and surname, and the generator tests a curated pool of middle names against your actual full name — checking syllable rhythm, sound transitions, rhyme risk and initials in both orders. Each suggestion is scored out of 100 with the reason shown, so you can judge the logic rather than trust a random list." } },
-    { "@type": "Question", "name": "What makes a good middle name?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Three things: varied syllable rhythm across the full name (a 3–1–2 pattern usually flows better than 2–2–2), clean transitions where one name ends and the next begins with different sounds, and initials that don't spell anything unfortunate in either standard or monogram order." } },
-    { "@type": "Question", "name": "Is the middle name generator free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every tool is free with no subscription and no payment details needed. You get three free uses to try everything; after that, a free account (just your email) unlocks unlimited use of every tool on this site." } },
-    { "@type": "Question", "name": "Can I hear the full name said aloud?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every suggestion has a listen button that reads the complete first, middle and last name aloud in your choice of British, American or Australian voice — the test most parents never do until the registrar reads it back." } }
+    {
+      "@type": "Question",
+      "name": "How does this middle name generator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It tests a curated pool of names against your actual first name and surname: rhythm, sound transitions, rhyme and initials in both orders: and scores each out of 100 with the reason shown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes a good middle name?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Varied syllable rhythm, clean transitions between names, and safe initials in both standard and monogram order. The full logic is explained in the name checker."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it free? Do you store the names?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every tool is free with no subscription and no payment details needed. You get three free uses; after that, a free account (just your email) unlocks unlimited use of every tool. The names you type are analysed in your browser and never stored on our servers; only the email you sign up with is kept, and you can unsubscribe or ask for it to be deleted at any time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why isn't this AI-powered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deliberately. AI name tools give you a score with no explanation. Ours uses transparent, deterministic checks so every result comes with its reasoning attached: and you're free to disagree with any of it."
+      }
+    }
   ]
 }
 </script>
@@ -84,6 +108,10 @@
     <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span> Middle Names Generator</a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html" aria-current="page">Generator</a>
+      <a href="middle-names-for-girls.html">Girls</a>
+      <a href="middle-names-for-boys.html">Boys</a>
+      <a href="themes.html">Themes</a>
+      <a href="guides.html">Guides</a>
       <a href="index.html#free-features">All Free Features</a>
       <a href="full-name-checker.html">Name Checker</a>
       <a href="initials-checker.html">Initials</a>
@@ -130,7 +158,7 @@
   <div class="wrap">
     <p class="kicker">Free · Scored, not random · Nothing stored</p>
     <h1>Middle name generator</h1>
-    <p class="lede">Every other generator hands you a random list. This one scores each middle name against your <em>actual</em> first name and surname — rhythm, initials, flow — and shows its reasoning. Then it says the whole thing aloud.</p>
+    <p class="lede">Every other generator hands you a random list. This one scores each middle name against your <em>actual</em> first name and surname: rhythm, initials, flow: and shows its reasoning. Then it says the whole thing aloud.</p>
 
     <div class="tool-card">
       <div class="tool-grid">
@@ -174,9 +202,9 @@
             <button class="btn small coral" id="slShare" type="button">Share the shortlist</button>
             <a class="btn small ghost" href="name-report.html">Print a full name report</a>
           </div>
-          <p style="font-size:0.8rem;color:var(--ink-soft);margin:8px 0 0;">Saved on this device only — nothing is sent anywhere.</p>
+          <p style="font-size:0.8rem;color:var(--ink-soft);margin:8px 0 0;">Saved on this device only: nothing is sent anywhere.</p>
         </div>
-        <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:14px;">Scores come from transparent checks — rhythm, sound transitions, rhyme and initials — not an AI black box. Tap 🔊 to hear any full name. Found a contender? Run it through the <a href="full-name-checker.html">full name checker</a> for the complete breakdown.</p>
+        <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:14px;">Scores come from transparent checks: rhythm, sound transitions, rhyme and initials: not an AI black box. Tap 🔊 to hear any full name. Found a contender? Run it through the <a href="full-name-checker.html">full name checker</a> for the complete breakdown.</p>
       </div>
     </div>
   </div>
@@ -189,9 +217,9 @@
 <div class="ad-slot">Advertisement</div>
 
 <h2>Why scored suggestions beat random lists</h2>
-<p>Type "middle names" into any other generator and you'll get the same shuffled list whether your surname is Lee or Fotherington-Smythe. That's the flaw this tool fixes: a middle name doesn't flow in the abstract — it flows (or doesn't) between <em>your</em> first name and <em>your</em> surname. Olivia Rose Smith scores differently from Olivia Rose Ross, and the difference has reasons: syllable rhythm, the sounds where names join, rhyme risk, and what the initials spell in both standard and monogram order.</p>
+<p>Type "middle names" into any other generator and you'll get the same shuffled list whether your surname is Lee or Fotherington-Smythe. That's the flaw this tool fixes: a middle name doesn't flow in the abstract: it flows (or doesn't) between <em>your</em> first name and <em>your</em> surname. Olivia Rose Smith scores differently from Olivia Rose Ross, and the difference has reasons: syllable rhythm, the sounds where names join, rhyme risk, and what the initials spell in both standard and monogram order.</p>
 
-<p>Every suggestion above shows its score and its strongest reason, and flags any weakness honestly. Disagree with a check? Good — that's the point of showing them. The tool's job is to surface what you'd only otherwise discover at the registrar's desk.</p>
+<p>Every suggestion above shows its score and its strongest reason, and flags any weakness honestly. Disagree with a check? Good: that's the point of showing them. The tool's job is to surface what you'd only otherwise discover at the registrar's desk.</p>
 
 
 <h2 id="free-features">What other name apps charge for, free here</h2>
@@ -213,7 +241,7 @@
 
 <h2>Popular middle name searches</h2>
 <div class="card-grid">
-  <a class="tool-link-card" href="middle-names-olivia.html"><span class="emoji" aria-hidden="true">🌸</span><h3>Middle Names for Olivia</h3><p>Curated and testable — the full list with the checker built in.</p></a>
+  <a class="tool-link-card" href="middle-names-olivia.html"><span class="emoji" aria-hidden="true">🌸</span><h3>Middle Names for Olivia</h3><p>Curated and testable: the full list with the checker built in.</p></a>
   <a class="tool-link-card" href="middle-names-noah.html"><span class="emoji" aria-hidden="true">⭐</span><h3>Middle Names for Noah</h3><p>One-syllable classics to grand formal picks, scored live.</p></a>
   <a class="tool-link-card" href="full-name-checker.html"><span class="emoji" aria-hidden="true">✅</span><h3>Already have a shortlist?</h3><p>Test your own combination in the full name checker.</p></a>
 </div>
@@ -222,25 +250,25 @@
 <h2>Browse middle names by theme</h2>
 <div class="card-grid">
   <a class="tool-link-card" href="name-battle.html"><span class="emoji" aria-hidden="true">⚔️</span><h3>Name Battle</h3><p>Two names duel, your instinct ranks the shortlist. Couples: play separately, compare.</p></a>
-  <a class="tool-link-card" href="names-by-origin.html"><span class="emoji" aria-hidden="true">🌍</span><h3>Names by Origin</h3><p>Hebrew, Arabic, Irish, Norse and more — heritage names with meanings.</p></a>
-  <a class="tool-link-card" href="directory.html"><span class="emoji" aria-hidden="true">🧭</span><h3>Browse Everything</h3><p>Every tool, game, list and guide — one page.</p></a>
+  <a class="tool-link-card" href="names-by-origin.html"><span class="emoji" aria-hidden="true">🌍</span><h3>Names by Origin</h3><p>Hebrew, Arabic, Irish, Norse and more: heritage names with meanings.</p></a>
+  <a class="tool-link-card" href="directory.html"><span class="emoji" aria-hidden="true">🧭</span><h3>Browse Everything</h3><p>Every tool, game, list and guide: one page.</p></a>
   <a class="tool-link-card" href="two-middle-names-generator.html"><span class="emoji" aria-hidden="true">➕</span><h3>Two Middle Names</h3><p>Complete pairs, scored across all four names.</p></a>
   <a class="tool-link-card" href="names-by-meaning.html"><span class="emoji" aria-hidden="true">💌</span><h3>Names by Meaning</h3><p>Start from love, light or strength and work backwards.</p></a>
-  <a class="tool-link-card" href="name-report.html"><span class="emoji" aria-hidden="true">🖨️</span><h3>Full Name Report</h3><p>Everything on one printable page — for the grandparents.</p></a>
-  <a class="tool-link-card" href="name-meanings.html"><span class="emoji" aria-hidden="true">📖</span><h3>Name Meanings</h3><p>You found the name — now, what does it mean? Honest origins, debates included.</p></a>
-  <a class="tool-link-card" href="honour-name-helper.html"><span class="emoji" aria-hidden="true">💝</span><h3>Honour Name Helper</h3><p>Two grandmothers, one baby? Compare family-name orders, scored — the diplomatic way out.</p></a>
+  <a class="tool-link-card" href="name-report.html"><span class="emoji" aria-hidden="true">🖨️</span><h3>Full Name Report</h3><p>Everything on one printable page: for the grandparents.</p></a>
+  <a class="tool-link-card" href="name-meanings.html"><span class="emoji" aria-hidden="true">📖</span><h3>Name Meanings</h3><p>You found the name: now, what does it mean? Honest origins, debates included.</p></a>
+  <a class="tool-link-card" href="honour-name-helper.html"><span class="emoji" aria-hidden="true">💝</span><h3>Honour Name Helper</h3><p>Two grandmothers, one baby? Compare family-name orders, scored: the diplomatic way out.</p></a>
   <a class="tool-link-card" href="biblical-middle-names-for-boys.html"><span class="emoji" aria-hidden="true">📖</span><h3>Biblical (Boys)</h3><p>James to Ezra, testable live.</p></a>
   <a class="tool-link-card" href="biblical-middle-names-for-girls.html"><span class="emoji" aria-hidden="true">🕊️</span><h3>Biblical (Girls)</h3><p>Ruth, Naomi, Esther and more.</p></a>
   <a class="tool-link-card" href="muslim-middle-names.html"><span class="emoji" aria-hidden="true">🌙</span><h3>Muslim &amp; Arabic</h3><p>Noor to Ibrahim, scored with your surname.</p></a>
   <a class="tool-link-card" href="hebrew-middle-names.html"><span class="emoji" aria-hidden="true">✡️</span><h3>Hebrew</h3><p>Talia, Noam, Eliana and friends.</p></a>
-  <a class="tool-link-card" href="nature-middle-names.html"><span class="emoji" aria-hidden="true">🌿</span><h3>Nature</h3><p>Wren, River, Juniper — the brave slot.</p></a>
+  <a class="tool-link-card" href="nature-middle-names.html"><span class="emoji" aria-hidden="true">🌿</span><h3>Nature</h3><p>Wren, River, Juniper: the brave slot.</p></a>
   <a class="tool-link-card" href="vintage-middle-names.html"><span class="emoji" aria-hidden="true">🕰️</span><h3>Vintage</h3><p>Great-grandparent gold, modern variants included.</p></a>
   <a class="tool-link-card" href="how-to-choose-a-middle-name.html"><span class="emoji" aria-hidden="true">🧭</span><h3>How to Choose</h3><p>The four-step method.</p></a>
 </div>
 
 <h2>More free name tools</h2>
 <div class="card-grid">
-  <a class="tool-link-card" href="initials-checker.html"><span class="emoji" aria-hidden="true">🔤</span><h3>Initials Checker</h3><p>Both initial orders — including the monogram order everyone forgets.</p></a>
+  <a class="tool-link-card" href="initials-checker.html"><span class="emoji" aria-hidden="true">🔤</span><h3>Initials Checker</h3><p>Both initial orders: including the monogram order everyone forgets.</p></a>
   <a class="tool-link-card" href="sibling-name-checker.html"><span class="emoji" aria-hidden="true">👧👦</span><h3>Sibling Name Checker</h3><p>Does the new name fit the set you've already started?</p></a>
   <a class="tool-link-card" href="say-my-name.html"><span class="emoji" aria-hidden="true">🔊</span><h3>Say My Name</h3><p>The voice test, plus the name on a register, email and CV.</p></a>
   <a class="tool-link-card" href="compare-names.html"><span class="emoji" aria-hidden="true">⚖️</span><h3>Compare Two Names</h3><p>Settle the shortlist argument with evidence.</p></a>
@@ -253,7 +281,7 @@
 <h2>Frequently asked questions</h2>
 <details class="faq">
   <summary>How does this middle name generator work?</summary>
-  <div class="faq-body"><p>It tests a curated pool of names against your actual first name and surname — rhythm, sound transitions, rhyme and initials in both orders — and scores each out of 100 with the reason shown.</p></div>
+  <div class="faq-body"><p>It tests a curated pool of names against your actual first name and surname: rhythm, sound transitions, rhyme and initials in both orders: and scores each out of 100 with the reason shown.</p></div>
 </details>
 <details class="faq">
   <summary>What makes a good middle name?</summary>
@@ -265,7 +293,7 @@
 </details>
 <details class="faq">
   <summary>Why isn't this AI-powered?</summary>
-  <div class="faq-body"><p>Deliberately. AI name tools give you a score with no explanation. Ours uses transparent, deterministic checks so every result comes with its reasoning attached — and you're free to disagree with any of it.</p></div>
+  <div class="faq-body"><p>Deliberately. AI name tools give you a score with no explanation. Ours uses transparent, deterministic checks so every result comes with its reasoning attached: and you're free to disagree with any of it.</p></div>
 </details>
 
 </div>
@@ -296,28 +324,11 @@
     <div>
       <h4>Middle Names by Name</h4>
       <ul>
+        <li><a href="middle-names-for-girls.html">Middle names for girls (all)</a></li>
+        <li><a href="middle-names-for-boys.html">Middle names for boys (all)</a></li>
         <li><a href="middle-names-olivia.html">Middle names for Olivia</a></li>
-        <li><a href="middle-names-amelia.html">Middle names for Amelia</a></li>
-        <li><a href="middle-names-isla.html">Middle names for Isla</a></li>
-        <li><a href="middle-names-ava.html">Middle names for Ava</a></li>
-        <li><a href="middle-names-freya.html">Middle names for Freya</a></li>
         <li><a href="middle-names-noah.html">Middle names for Noah</a></li>
-        <li><a href="middle-names-oliver.html">Middle names for Oliver</a></li>
-        <li><a href="middle-names-george.html">Middle names for George</a></li>
-        <li><a href="middle-names-leo.html">Middle names for Leo</a></li>
-        <li><a href="middle-names-muhammad.html">Middle names for Muhammad</a></li>
-        <li><a href="middle-names-emmanuel.html">Middle names for Emmanuel</a></li>
-        <li><a href="middle-names-lily.html">Middle names for Lily</a></li>
-        <li><a href="middle-names-ivy.html">Middle names for Ivy</a></li>
-        <li><a href="middle-names-florence.html">Middle names for Florence</a></li>
-        <li><a href="middle-names-willow.html">Middle names for Willow</a></li>
-        <li><a href="middle-names-mia.html">Middle names for Mia</a></li>
-        <li><a href="middle-names-grace.html">Middle names for Grace</a></li>
-        <li><a href="middle-names-arthur.html">Middle names for Arthur</a></li>
-        <li><a href="middle-names-theodore.html">Middle names for Theodore</a></li>
-        <li><a href="middle-names-oscar.html">Middle names for Oscar</a></li>
-        <li><a href="middle-names-henry.html">Middle names for Henry</a></li>
-        <li><a href="middle-names-archie.html">Middle names for Archie</a></li>
+        <li><a href="directory.html">Every page A–Z</a></li>
       </ul>
     </div>
     <div>
@@ -351,7 +362,7 @@
     </div>
   </div>
   <div class="foot-note">
-    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun — nothing here is professional advice.</p>
+    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun: nothing here is professional advice.</p>
   </div>
 </footer>
 
@@ -361,10 +372,10 @@
   <button class="btn small ghost" data-choice="reject" style="color:#E8E6F5;border-color:#55527A;">Essential only</button>
 </div>
 
-<script src="engine.js?v=12"></script>
-<script src="meanings.js?v=12"></script>
-<script src="shortlist.js?v=12"></script>
-<script src="generator.js?v=12"></script>
+<script src="engine.js?v=15432"></script>
+<script src="meanings.js?v=15432"></script>
+<script src="shortlist.js?v=15432"></script>
+<script src="generator.js?v=15432"></script>
 <script>
 (function(){
   const $ = id => document.getElementById(id);
@@ -473,6 +484,6 @@
   renderShortlist();
 })();
 </script>
-<script src="gate.js?v=12"></script>
+<script src="gate.js?v=15432"></script>
 </body>
 </html>
