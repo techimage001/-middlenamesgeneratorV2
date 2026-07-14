@@ -29,18 +29,25 @@ free guarantee, a proper form, and a "check your inbox" state with a
 live spinner while it waits for the click.
 New page: verify.php (the confirmation landing page, styled to match).
 
-## 3. TURNSTILE SETUP (5 minutes, free, do this once)
-  a) Go to dash.cloudflare.com -> Turnstile -> Add site
-     (free; you do NOT need to host DNS with Cloudflare)
-     Domain: middlenamesgenerator.com   Widget mode: Managed
-  b) Copy the two keys it gives you.
-  c) config.php: paste them into TURNSTILE_SITE_KEY and TURNSTILE_SECRET
-  d) In EVERY html page, find this line near the bottom:
-        <script>window.MNG_TURNSTILE_KEY = "";</script>
-     and paste the SITE key between the quotes.
-     (Fastest: find-and-replace across all files in your editor.)
-  Leave the keys blank and everything still works, minus Turnstile;
-  the other six layers, including email verification, stay active.
+## 3. TURNSTILE SETUP (optional, free, ONE file to edit)
+Turnstile is Cloudflare's free bot check. It is invisible to real
+visitors and stops automated browsers before they can submit the form.
+
+  a) Go to https://dash.cloudflare.com -> Turnstile -> Add site
+     (free; you do NOT need to move your hosting or DNS)
+       Site name:  middlenamesgenerator
+       Domain:     middlenamesgenerator.com
+       Widget mode: Managed
+  b) It shows you TWO keys. Copy them.
+  c) Open config.php and paste them into these two lines ONLY:
+       define('TURNSTILE_SITE_KEY', 'paste-the-site-key-here');
+       define('TURNSTILE_SECRET',   'paste-the-secret-key-here');
+  d) Commit and redeploy. That is the whole job.
+
+The pages pick the key up from config.php automatically, so there is
+nothing to edit in any HTML file.
+Leave both blank and the site still works: you keep the other six
+layers, including email verification.
 
 ## 4. BEFORE YOU PUSH (required)
   - config.php -> ADMIN_PASSWORD: set a long password

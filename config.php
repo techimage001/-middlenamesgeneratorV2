@@ -1,29 +1,43 @@
 <?php
 /* ============================================================
-   Middle Names Generator — lead collector configuration
-   EDIT THE VALUES BELOW BEFORE DEPLOY, then never share them.
+   SECRETS DO NOT LIVE IN THIS FILE.
+
+   This file is safe to commit to git, public or private: it
+   contains no passwords and no keys.
+
+   Your real secrets live in ONE file on the server, outside
+   public_html, where git deploys can never touch or overwrite it:
+
+       /home/USER/domains/middlenamesgenerator.com/mng_private/secrets.php
+
+   Create it once in hPanel -> File Manager (template provided as
+   SECRETS-TEMPLATE.php in this repo). See SECRETS-SETUP.md.
+
+   If that file is missing, the site still runs: Turnstile stays off
+   and the leads admin panel stays locked, rather than breaking.
    ============================================================ */
 
-/* 1. Admin password for leads.php (change this!) */
-define('ADMIN_PASSWORD', 'password here');
+$MNG_SECRETS = [];
+foreach ([
+    dirname($_SERVER['DOCUMENT_ROOT'] ?? __DIR__) . '/mng_private/secrets.php',
+    dirname(__DIR__) . '/mng_private/secrets.php',
+] as $__p) {
+    if (is_readable($__p)) { $MNG_SECRETS = include $__p; break; }
+}
+if (!is_array($MNG_SECRETS)) $MNG_SECRETS = [];
 
-/* 2. Where signup notifications are sent (create in hPanel -> Emails) */
-define('NOTIFY_EMAIL', 'info@middlenamesgenerator.com');
-define('FROM_EMAIL',   'info@middlenamesgenerator.com');
+/* Admin password for leads.php. No secrets file = panel stays locked. */
+define('ADMIN_PASSWORD', $MNG_SECRETS['admin_password'] ?? '');
 
-/* 3. Site URL (used to build verification links) */
-define('SITE_URL', 'https://middlenamesgenerator.com');
+/* Cloudflare Turnstile. Blank = layer disabled, everything else works. */
+define('TURNSTILE_SITE_KEY', $MNG_SECRETS['turnstile_site_key'] ?? '');
+define('TURNSTILE_SECRET',   $MNG_SECRETS['turnstile_secret']   ?? '');
+
+/* Non-secret settings: safe to keep here and edit in git. */
+define('NOTIFY_EMAIL', $MNG_SECRETS['notify_email'] ?? 'info@middlenamesgenerator.com');
+define('FROM_EMAIL',   $MNG_SECRETS['from_email']   ?? 'info@middlenamesgenerator.com');
+define('SITE_URL',  'https://middlenamesgenerator.com');
 define('SITE_NAME', 'Middle Names Generator');
-
-/* 4. CLOUDFLARE TURNSTILE (free, invisible bot protection)
-      Get keys: dash.cloudflare.com -> Turnstile -> Add site
-      (free, no Cloudflare hosting needed, works on any domain)
-      Leave BOTH blank to disable (not recommended). */
-define('0x4AAAAAAD1inMb0tcLEJJo0', '');   /* public key, safe in HTML */
-define('0x4AAAAAAD1inBq3G38WdeFX1EWF3QmDKRM',   '');   /* secret key, server only  */
-
-/* 5. Email verification: link must be clicked before unlock.
-      This is what guarantees a zero-bot list. Keep true. */
 define('REQUIRE_VERIFICATION', true);
 define('VERIFY_EXPIRY_HOURS', 48);
 
@@ -79,7 +93,9 @@ function mng_ip_hash() {
 
 /* Verify a Cloudflare Turnstile token. True if disabled or valid. */
 function mng_turnstile_ok($token) {
-    if (TURNSTILE_SECRET === '') return true;
+    /* Enforce only when BOTH keys are set. A half-configured widget must
+       never silently block real signups. */
+    if (TURNSTILE_SECRET === '' || TURNSTILE_SITE_KEY === '') return true;
     if (!$token) return false;
     $post = http_build_query([
         'secret'   => TURNSTILE_SECRET,

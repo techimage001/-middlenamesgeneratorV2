@@ -5,7 +5,7 @@ session_start();
 header('X-Robots-Tag: noindex, nofollow');
 
 if (isset($_POST['pw'])) {
-    if (hash_equals(ADMIN_PASSWORD, $_POST['pw'])) $_SESSION['mng_admin'] = true;
+    if (ADMIN_PASSWORD !== '' && hash_equals(ADMIN_PASSWORD, $_POST['pw'])) $_SESSION['mng_admin'] = true;
     else $err = 'Wrong password.';
 }
 if (isset($_GET['logout'])) { session_destroy(); header('Location: leads.php'); exit; }

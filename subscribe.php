@@ -16,6 +16,11 @@ try {
         mng_event($db, $_GET['event']); out(true);
     }
 
+    /* Public site key for the gate (safe to expose; the secret never leaves the server) */
+    if (isset($_GET['config'])) {
+        out(true, ['turnstile' => TURNSTILE_SITE_KEY]);
+    }
+
     /* Poll: has this email been verified yet? (gate.js checks while user waits) */
     if (isset($_GET['status'])) {
         $e = strtolower(trim($_GET['status']));
@@ -37,7 +42,7 @@ try {
     $tok = $raw['tok'] ?? '';
     if ($tok !== substr(hash('sha256', $t . '|mng-gate-2026'), 0, 12)) out(true, ['sent' => true]);
     /* 6 Turnstile (blocks headless browsers that pass 1-3) */
-    if (!mng_turnstile_ok($raw['cf'] ?? '')) out(false, ['msg' => 'Verification failed. Please reload and try again.']);
+    if (!mng_turnstile_ok($raw['cf'] ?? '')) out(false, ['msg' => 'The human check did not complete. Please wait for the checkbox above to finish, then try again.']);
 
     /* 4 rate limit */
     $ip = mng_ip_hash(); $hour = gmdate('Y-m-d-H');
