@@ -41,8 +41,16 @@ try {
     /* 3 JS token */
     $tok = $raw['tok'] ?? '';
     if ($tok !== substr(hash('sha256', $t . '|mng-gate-2026'), 0, 12)) out(true, ['sent' => true]);
-    /* 6 Turnstile (blocks headless browsers that pass 1-3) */
-    if (!mng_turnstile_ok($raw['cf'] ?? '')) out(false, ['msg' => 'The human check did not complete. Please wait for the checkbox above to finish, then try again.']);
+    /* 6 Turnstile. If the widget produced a token it MUST be valid (a forged
+       or replayed token is a real bot signal). If no token arrived at all
+       (ad blocker, Cloudflare unreachable, script blocked), we let the
+       signup proceed: layer 7 (email verification) still guarantees that no
+       bot can ever reach the list, and we never lock out a real person over
+       a widget that failed to load. */
+    $cf = trim($raw['cf'] ?? '');
+    if ($cf !== '' && !mng_turnstile_ok($cf)) {
+        out(false, ['msg' => 'That human check did not pass. Please reload the page and try again.']);
+    }
 
     /* 4 rate limit */
     $ip = mng_ip_hash(); $hour = gmdate('Y-m-d-H');
