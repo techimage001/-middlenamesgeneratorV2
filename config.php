@@ -5,7 +5,7 @@
    ============================================================ */
 
 /* 1. Admin password for leads.php (change this!) */
-define('ADMIN_PASSWORD', 'April7051@April7051@');
+define('ADMIN_PASSWORD', 'password here');
 
 /* 2. Where signup notifications are sent (create in hPanel -> Emails) */
 define('NOTIFY_EMAIL', 'info@middlenamesgenerator.com');
