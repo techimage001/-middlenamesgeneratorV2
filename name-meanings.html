@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baby Name Meanings Lookup: Honest Origins | Middle Names Generator</title>
-<meta name="description" content="Free baby name meanings lookup with honest handling of debated etymologies — and of names that simply don’t have a classical meaning.">
+<title>Name Meanings and the Middle Names That Fit Them | Middle Names Generator</title>
+<meta name="description" content="What each popular name actually means, where it comes from, and which middle names its sound invites. Free and scored.">
 <link rel="canonical" href="https://middlenamesgenerator.com/name-meanings.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#5D4E8C">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=15432">
 <style>
 .order-card { background: var(--paper); border-radius: 14px; padding: 18px; margin-top: 14px; }
 .order-card.best { outline: 3px solid var(--gold); }
@@ -22,11 +22,36 @@
 .mod-table td { padding: 10px 14px; border-top: 1px solid var(--line); }
 .table-scroll { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); margin: 1rem 0; }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
- {"@type":"Question","name":"Does every name have a meaning?","acceptedAnswer":{"@type":"Answer","text":"No — and that is normal. Many modern names are surnames, place names, invented forms or respellings chosen for sound rather than sense. A name without a classical etymology is not lesser; its meaning is the person who carries it."}},
- {"@type":"Question","name":"Why do sources disagree about a name’s meaning?","acceptedAnswer":{"@type":"Answer","text":"Etymology is scholarship, not certainty: names travelled between languages for centuries, and glosses were sometimes invented after the fact. Where the origin is debated, an honest source says so rather than picking the prettiest option."}}
-]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://middlenamesgenerator.com/"}, {"@type": "ListItem", "position": 2, "name": "Baby Name Meanings Lookup", "item": "https://middlenamesgenerator.com/name-meanings.html"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Name meanings",
+  "description": "What each popular name actually means, where it comes from, and which middle names its sound invites. Free and scored.",
+  "url": "https://middlenamesgenerator.com/name-meanings.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Middle Names Generator",
+    "url": "https://middlenamesgenerator.com/"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://middlenamesgenerator.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Name meanings"
+      }
+    ]
+  }
+}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4138594802747479" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -36,6 +61,10 @@
     <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span> Middle Names Generator</a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html">Generator</a>
+      <a href="middle-names-for-girls.html">Girls</a>
+      <a href="middle-names-for-boys.html">Boys</a>
+      <a href="themes.html">Themes</a>
+      <a href="guides.html">Guides</a>
       <a href="index.html#free-features">All Free Features</a>
       <a href="full-name-checker.html">Name Checker</a>
       <a href="initials-checker.html">Initials</a>
@@ -48,55 +77,148 @@
   </div>
 </header>
 <section class="hero">
+  <svg aria-hidden="true" viewBox="0 0 160 160" width="120" height="120" style="position:absolute;top:26px;right:6%;pointer-events:none;opacity:0.9;" xmlns="http://www.w3.org/2000/svg">
+    <rect x="72" y="30" width="14" height="110" rx="6" fill="#5D4E8C"/>
+    <path d="M30 48 h64 l14 12 -14 12 h-64 z" fill="#F2C14E"/>
+    <path d="M128 84 h-64 l-14 12 14 12 h64 z" fill="#F08A7E"/>
+    <circle cx="79" cy="30" r="9" fill="#2E9E6B"/>
+  </svg>
   <div class="wrap">
-    <p class="kicker">Free · Honest about uncertainty · Nothing stored</p>
-    <h1>Baby name meanings lookup</h1>
-    <p class="lede">You’ve found a name you love — the next question is always the same: what does it mean? Look it up below. And where scholars genuinely disagree, we tell you that instead of inventing something pretty.</p>
-    <div class="tool-card">
-      <div class="tool-grid">
-        <div class="field" style="grid-column: 1 / span 2;"><label for="lookupName">Name</label><input type="text" id="lookupName" placeholder="Amelia" autocomplete="off"></div>
-        <div class="field" style="align-self: end;"><button class="btn" id="lookupBtn" style="width:100%;">Find the meaning</button></div>
-      </div>
-      <div class="result" id="result" aria-live="polite">
-        <div class="order-card best" id="meaningCard">
-          <h3 id="mName">—</h3>
-          <p id="mOrigin" style="font-size:0.85rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 6px;"></p>
-          <p id="mText" style="margin:0;font-size:1.05rem;"></p>
-          <p id="mExtra" style="margin:12px 0 0;font-size:0.9rem;color:var(--ink-soft);"></p>
-        </div>
-      </div>
-    </div>
+    <p class="kicker">Everything on the site · One page</p>
+    <h1>Browse everything</h1>
+    <p class="lede">Every tool, game, list and guide we've built: organised so you can find the right one in seconds.</p>
   </div>
 </section>
 <main>
-<div class="wrap narrow">
-<!-- AD SLOT: paste AdSense responsive unit here after approval -->
-<div class="ad-slot">Advertisement</div>
-
-<h2>How name meanings actually work</h2>
-<p>A name’s “meaning” is its etymology — what the word meant in the language it came from, sometimes thousands of years ago. Olivia goes back to the Latin for olive tree; Muhammad to the Arabic for praised. Our dictionary covers the most-used names in the English-speaking world, curated by hand so each entry reflects the mainstream scholarly view — and where the experts genuinely disagree (Maya, Ava, Arthur), the entry says “debated” and gives the candidates.</p>
-
-<h2>When a name has no meaning — and why that’s fine</h2>
-<p>Plenty of beloved modern names have no classical etymology at all: surname-names like Harper and Taylor mean an occupation someone’s ancestor had; place-names like Isla and Brooklyn mean a location; and invented or respelled names mean whatever the sound evokes. If your name returns “not in our dictionary”, it may simply be newer than etymology — the meaning will be the person who carries it. Either way, the sound test still applies: run it through the <a href="full-name-checker.html">full name checker</a> with your surname.</p>
-
-<h2>Frequently asked questions</h2>
-<details class="faq"><summary>Does every name have a meaning?</summary><div class="faq-body"><p>No — surname-names, place-names and modern inventions often carry style rather than etymology, and that’s perfectly normal.</p></div></details>
-<details class="faq"><summary>Why do sources disagree about meanings?</summary><div class="faq-body"><p>Names travelled between languages for centuries and some traditional glosses were invented after the fact. Honest sources flag debate rather than choosing the prettiest story.</p></div></details>
-
-
-<h2>Popular middle name lists</h2>
-<div class="related-block callout">
-  <p>Curated, scored and testable with your surname: <a href="middle-names-grace.html">Grace</a> · <a href="middle-names-theodore.html">Theodore</a> · <a href="middle-names-willow.html">Willow</a> · <a href="middle-names-leo.html">Leo</a> · <a href="middle-names-ivy.html">Ivy</a> · <a href="middle-names-arthur.html">Arthur</a> · <a href="directory.html">all 22 lists</a></p>
-  <p><strong>Browse by theme:</strong> <a href="nature-middle-names.html">nature</a> · <a href="vintage-middle-names.html">vintage</a> · <a href="biblical-middle-names-for-girls.html">biblical (girls)</a> · <a href="biblical-middle-names-for-boys.html">biblical (boys)</a> · <a href="hebrew-middle-names.html">Hebrew</a> · <a href="muslim-middle-names.html">Muslim and Arabic</a></p>
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> <span>›</span> <span>Name meanings</span></nav>
+<div class="hero">
+<p class="kicker">Free · Scored, not random · Nothing stored</p>
+<h1>Name meanings</h1>
+<p class="lede">Meaning is only half the job. Each page below gives the origin, then the middle names that genuinely fit that name's sound, scored against your surname.</p>
 </div>
-<h2>More names and tools</h2>
+<div class="callout"><strong>Start here:</strong> the <a href="index.html">scored generator</a> pairs any first name with your real surname and reads the result aloud. Every list below feeds straight into it.</div>
+<h2>A to L</h2>
 <div class="card-grid">
-  <a class="tool-link-card" href="index.html"><span class="emoji" aria-hidden="true">✨</span><h3>Middle Name Generator</h3><p>Suggestions now show their meanings too.</p></a>
-  <a class="tool-link-card" href="full-name-checker.html"><span class="emoji" aria-hidden="true">✅</span><h3>Full Name Checker</h3><p>Meaning is half the story — hear how it flows.</p></a>
-  <a class="tool-link-card" href="say-my-name.html"><span class="emoji" aria-hidden="true">🔊</span><h3>Say My Name</h3><p>Three accents, real-world previews.</p></a>
+<a class="tool-link-card" href="aaron-name-meaning.html"><h3>Aaron</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="ada-name-meaning.html"><h3>Ada</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="adam-name-meaning.html"><h3>Adam</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="albert-name-meaning.html"><h3>Albert</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="alexander-name-meaning.html"><h3>Alexander</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="alfie-name-meaning.html"><h3>Alfie</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="alfred-name-meaning.html"><h3>Alfred</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="alice-name-meaning.html"><h3>Alice</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="andrew-name-meaning.html"><h3>Andrew</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="anna-name-meaning.html"><h3>Anna</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="anthony-name-meaning.html"><h3>Anthony</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="arabella-name-meaning.html"><h3>Arabella</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="arlo-name-meaning.html"><h3>Arlo</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="athena-name-meaning.html"><h3>Athena</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="audrey-name-meaning.html"><h3>Audrey</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="aurora-name-meaning.html"><h3>Aurora</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="benjamin-name-meaning.html"><h3>Benjamin</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="caleb-name-meaning.html"><h3>Caleb</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="charles-name-meaning.html"><h3>Charles</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="charlie-name-meaning.html"><h3>Charlie</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="charlotte-name-meaning.html"><h3>Charlotte</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="christian-name-meaning.html"><h3>Christian</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="clara-name-meaning.html"><h3>Clara</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="connor-name-meaning.html"><h3>Connor</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="daisy-name-meaning.html"><h3>Daisy</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="daniel-name-meaning.html"><h3>Daniel</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="david-name-meaning.html"><h3>David</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="declan-name-meaning.html"><h3>Declan</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="delilah-name-meaning.html"><h3>Delilah</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="edward-name-meaning.html"><h3>Edward</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="eleanor-name-meaning.html"><h3>Eleanor</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="elias-name-meaning.html"><h3>Elias</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="elijah-name-meaning.html"><h3>Elijah</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="elizabeth-name-meaning.html"><h3>Elizabeth</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="elliot-name-meaning.html"><h3>Elliot</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="eloise-name-meaning.html"><h3>Eloise</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="elsie-name-meaning.html"><h3>Elsie</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="emily-name-meaning.html"><h3>Emily</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="emma-name-meaning.html"><h3>Emma</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="emmett-name-meaning.html"><h3>Emmett</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="esme-name-meaning.html"><h3>Esme</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="ethan-name-meaning.html"><h3>Ethan</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="evelyn-name-meaning.html"><h3>Evelyn</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="everett-name-meaning.html"><h3>Everett</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="ezra-name-meaning.html"><h3>Ezra</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="felix-name-meaning.html"><h3>Felix</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="finley-name-meaning.html"><h3>Finley</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="freddie-name-meaning.html"><h3>Freddie</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="frederick-name-meaning.html"><h3>Frederick</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="gabriel-name-meaning.html"><h3>Gabriel</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="harper-name-meaning.html"><h3>Harper</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="harry-name-meaning.html"><h3>Harry</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="hazel-name-meaning.html"><h3>Hazel</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="hugo-name-meaning.html"><h3>Hugo</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="ibrahim-name-meaning.html"><h3>Ibrahim</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="iris-name-meaning.html"><h3>Iris</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="isaac-name-meaning.html"><h3>Isaac</h3><p>Meaning, origin and the middle names it invites.</p></a>
 </div>
+<h2>M to Z</h2>
+<div class="card-grid">
+<a class="tool-link-card" href="isabella-name-meaning.html"><h3>Isabella</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="jack-name-meaning.html"><h3>Jack</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="jacob-name-meaning.html"><h3>Jacob</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="james-name-meaning.html"><h3>James</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="jasper-name-meaning.html"><h3>Jasper</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="joseph-name-meaning.html"><h3>Joseph</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="josephine-name-meaning.html"><h3>Josephine</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="joshua-name-meaning.html"><h3>Joshua</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="jude-name-meaning.html"><h3>Jude</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="julian-name-meaning.html"><h3>Julian</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="levi-name-meaning.html"><h3>Levi</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="liam-name-meaning.html"><h3>Liam</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="lincoln-name-meaning.html"><h3>Lincoln</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="louis-name-meaning.html"><h3>Louis</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="luca-name-meaning.html"><h3>Luca</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="lucas-name-meaning.html"><h3>Lucas</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="lucy-name-meaning.html"><h3>Lucy</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="luke-name-meaning.html"><h3>Luke</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="luna-name-meaning.html"><h3>Luna</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="mabel-name-meaning.html"><h3>Mabel</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="maeve-name-meaning.html"><h3>Maeve</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="margot-name-meaning.html"><h3>Margot</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="matilda-name-meaning.html"><h3>Matilda</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="max-name-meaning.html"><h3>Max</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="michael-name-meaning.html"><h3>Michael</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="milo-name-meaning.html"><h3>Milo</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="naomi-name-meaning.html"><h3>Naomi</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="nathan-name-meaning.html"><h3>Nathan</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="nicholas-name-meaning.html"><h3>Nicholas</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="olive-name-meaning.html"><h3>Olive</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="ophelia-name-meaning.html"><h3>Ophelia</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="otis-name-meaning.html"><h3>Otis</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="owen-name-meaning.html"><h3>Owen</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="penelope-name-meaning.html"><h3>Penelope</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="phoebe-name-meaning.html"><h3>Phoebe</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="poppy-name-meaning.html"><h3>Poppy</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="reuben-name-meaning.html"><h3>Reuben</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="robert-name-meaning.html"><h3>Robert</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="roman-name-meaning.html"><h3>Roman</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="rory-name-meaning.html"><h3>Rory</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="rose-name-meaning.html"><h3>Rose</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="ruby-name-meaning.html"><h3>Ruby</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="samuel-name-meaning.html"><h3>Samuel</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="sarah-name-meaning.html"><h3>Sarah</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="sebastian-name-meaning.html"><h3>Sebastian</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="sienna-name-meaning.html"><h3>Sienna</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="silas-name-meaning.html"><h3>Silas</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="sophia-name-meaning.html"><h3>Sophia</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="stella-name-meaning.html"><h3>Stella</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="theo-name-meaning.html"><h3>Theo</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="thomas-name-meaning.html"><h3>Thomas</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="vincent-name-meaning.html"><h3>Vincent</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="violet-name-meaning.html"><h3>Violet</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="wesley-name-meaning.html"><h3>Wesley</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="william-name-meaning.html"><h3>William</h3><p>Meaning, origin and the middle names it invites.</p></a>
+<a class="tool-link-card" href="zachary-name-meaning.html"><h3>Zachary</h3><p>Meaning, origin and the middle names it invites.</p></a>
 </div>
-</main>
+<div class="callout" style="margin-top:2rem;"><strong>Also useful:</strong> <a href="how-to-choose-a-middle-name.html">how to choose a middle name</a> · <a href="can-you-have-two-middle-names.html">can you have two middle names?</a> · <a href="initials-checker.html">initials checker</a> · <a href="directory.html">every page A–Z</a></div>
+</div></main>
 
 <footer class="site-foot">
   <div class="foot-grid">
@@ -123,28 +245,11 @@
     <div>
       <h4>Middle Names by Name</h4>
       <ul>
+        <li><a href="middle-names-for-girls.html">Middle names for girls (all)</a></li>
+        <li><a href="middle-names-for-boys.html">Middle names for boys (all)</a></li>
         <li><a href="middle-names-olivia.html">Middle names for Olivia</a></li>
-        <li><a href="middle-names-amelia.html">Middle names for Amelia</a></li>
-        <li><a href="middle-names-isla.html">Middle names for Isla</a></li>
-        <li><a href="middle-names-ava.html">Middle names for Ava</a></li>
-        <li><a href="middle-names-freya.html">Middle names for Freya</a></li>
         <li><a href="middle-names-noah.html">Middle names for Noah</a></li>
-        <li><a href="middle-names-oliver.html">Middle names for Oliver</a></li>
-        <li><a href="middle-names-george.html">Middle names for George</a></li>
-        <li><a href="middle-names-leo.html">Middle names for Leo</a></li>
-        <li><a href="middle-names-muhammad.html">Middle names for Muhammad</a></li>
-        <li><a href="middle-names-emmanuel.html">Middle names for Emmanuel</a></li>
-        <li><a href="middle-names-lily.html">Middle names for Lily</a></li>
-        <li><a href="middle-names-ivy.html">Middle names for Ivy</a></li>
-        <li><a href="middle-names-florence.html">Middle names for Florence</a></li>
-        <li><a href="middle-names-willow.html">Middle names for Willow</a></li>
-        <li><a href="middle-names-mia.html">Middle names for Mia</a></li>
-        <li><a href="middle-names-grace.html">Middle names for Grace</a></li>
-        <li><a href="middle-names-arthur.html">Middle names for Arthur</a></li>
-        <li><a href="middle-names-theodore.html">Middle names for Theodore</a></li>
-        <li><a href="middle-names-oscar.html">Middle names for Oscar</a></li>
-        <li><a href="middle-names-henry.html">Middle names for Henry</a></li>
-        <li><a href="middle-names-archie.html">Middle names for Archie</a></li>
+        <li><a href="directory.html">Every page A–Z</a></li>
       </ul>
     </div>
     <div>
@@ -178,7 +283,7 @@
     </div>
   </div>
   <div class="foot-note">
-    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun — nothing here is professional advice.</p>
+    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun: nothing here is professional advice.</p>
   </div>
 </footer>
 
@@ -188,32 +293,7 @@
   <button class="btn small ghost" data-choice="reject" style="color:#E8E6F5;border-color:#55527A;">Essential only</button>
 </div>
 
-<script src="engine.js?v=12"></script>
-<script src="meanings.js?v=12"></script>
-<script>
-(function(){
-  const $ = id => document.getElementById(id);
-  function run() {
-    const raw = $("lookupName").value.trim();
-    if (!raw) return;
-    const key = raw.toLowerCase();
-    const hit = (window.NTF_MEANINGS || {})[key];
-    $("mName").textContent = NTF.cap(raw);
-    if (hit) {
-      $("mOrigin").textContent = "Origin: " + hit[0];
-      $("mText").textContent = "“" + hit[1].charAt(0).toUpperCase() + hit[1].slice(1) + "”";
-      $("mExtra").innerHTML = 'Now hear it with your surname in the <a href="full-name-checker.html">full name checker</a>, or find <a href="index.html">middle names that flow with it</a>.';
-    } else {
-      $("mOrigin").textContent = "Not in our dictionary (yet)";
-      $("mText").textContent = "This may be a modern, invented, surname- or place-derived name — many wonderful names carry style rather than classical etymology. We add names regularly.";
-      $("mExtra").innerHTML = 'The sound test still applies: try it in the <a href="full-name-checker.html">full name checker</a>.';
-    }
-    $("result").classList.add("show");
-  }
-  $("lookupBtn").addEventListener("click", run);
-  $("lookupName").addEventListener("keydown", e => { if (e.key === "Enter") run(); });
-})();
-</script>
-<script src="gate.js?v=12"></script>
+<script src="engine.js?v=15432"></script>
+<script src="gate.js?v=15432"></script>
 </body>
 </html>
