@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hear Your Baby's Name Said Aloud (Free Voice Test) | Middle Names Generator</title>
+<meta name="description" content="Hear your baby's full name read aloud in a British voice, then see it in the real world: school register, email address, boarding pass and CV. Free, nothing stored.">
+<link rel="canonical" href="https://middlenamesgenerator.com/say-my-name.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#5D4E8C">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=9">
+<style>
+/* Real-world preview mockups */
+.previews { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+@media (max-width: 680px) { .previews { grid-template-columns: 1fr; } }
+.mock { border: 1px solid var(--line); border-radius: 14px; background: var(--white); overflow: hidden; }
+.mock .tag { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); padding: 10px 14px 0; }
+.mock .body { padding: 12px 14px 16px; }
+.mock-register .line { display: flex; justify-content: space-between; border-bottom: 1px dashed var(--line); padding: 6px 2px; font-size: 0.92rem; }
+.mock-register .line.hl { background: #FFF6E8; font-weight: 800; }
+.mock-email { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.95rem; background: var(--paper); border-radius: 8px; padding: 12px; word-break: break-all; }
+.mock-boarding { background: linear-gradient(120deg, var(--plum) 0%, var(--plum-deep) 100%); color: #fff; border-radius: 10px; padding: 14px; }
+.mock-boarding .small { font-size: 0.68rem; letter-spacing: 0.1em; opacity: 0.75; text-transform: uppercase; }
+.mock-boarding .big { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.15rem; font-weight: 800; letter-spacing: 0.02em; }
+.mock-cv .cv-name { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.3rem; font-weight: 800; border-bottom: 3px solid var(--coral); display: inline-block; padding-bottom: 3px; }
+.mock-cv .cv-sub { font-size: 0.8rem; color: var(--ink-soft); margin-top: 6px; }
+.gender-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.gender-row label { border: 2px solid var(--line); border-radius: 30px; padding: 8px 16px; font-weight: 700; cursor: pointer; background: var(--white); font-size: 0.9rem; }
+.gender-row input { position: absolute; opacity: 0; }
+.gender-row label:has(input:checked) { border-color: var(--plum); color: var(--plum); background: #F1EDFB; }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://middlenamesgenerator.com/"}, {"@type": "ListItem", "position": 2, "name": "Hear Your Baby's Name Said Aloud (Free Voice Test)", "item": "https://middlenamesgenerator.com/say-my-name.html"}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4138594802747479" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span> Middle Names Generator</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Generator</a>
+      <a href="index.html#free-features">All Free Features</a>
+      <a href="full-name-checker.html">Name Checker</a>
+      <a href="initials-checker.html">Initials</a>
+      <a href="sibling-name-checker.html">Siblings</a>
+      <a href="say-my-name.html" aria-current="page">Say It Aloud</a>
+      <a href="compare-names.html">Compare</a>
+      <a href="name-meanings.html">Meanings</a>
+      <a href="directory.html">Browse All</a>
+      <a href="nickname-predictor.html">Nicknames</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Free · Choose the accent · Nothing recorded or stored</p>
+    <h1>Hear your baby's name said aloud</h1>
+    <p class="lede">Most parents never hear the full name spoken by another voice until the registrar reads it back. Fix that now — then see the name everywhere it will actually live.</p>
+
+    <div class="tool-card">
+      <div class="tool-grid">
+        <div class="field">
+          <label for="firstName">First name</label>
+          <input type="text" id="firstName" placeholder="Theodore" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="middleName">Middle name (optional)</label>
+          <input type="text" id="middleName" placeholder="James" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="lastName">Surname</label>
+          <input type="text" id="lastName" placeholder="Walker" autocomplete="off">
+        </div>
+      </div>
+      <div class="tool-actions">
+        <button class="btn coral" id="speakBtn">🔊 Say the full name</button>
+        <button class="btn ghost" id="registerBtn" type="button">📋 "Morning register" voice</button>
+        <button class="btn" id="previewBtn" type="button">👀 See it in the real world</button>
+      </div>
+      <div class="gender-row" role="radiogroup" aria-label="Accent" style="margin-top:12px;">
+        <label><input type="radio" name="accent" value="en-GB" checked>&#127468;&#127463; British</label>
+        <label><input type="radio" name="accent" value="en-US">&#127482;&#127480; American</label>
+        <label><input type="radio" name="accent" value="en-AU">&#127462;&#127482; Australian</label>
+      </div>
+      <p id="speakStatus" style="font-size:0.85rem;color:var(--ink-soft);margin:8px 0 0;"></p>
+
+      <div class="result" id="result" aria-live="polite">
+        <div class="previews">
+          <div class="mock mock-register">
+            <div class="tag">School register</div>
+            <div class="body">
+              <div class="line"><span>Ahmed, Yusuf</span><span>Present</span></div>
+              <div class="line hl"><span id="regName">—</span><span>Present</span></div>
+              <div class="line"><span>Brown, Charlie</span><span>Present</span></div>
+            </div>
+          </div>
+          <div class="mock">
+            <div class="tag">First email address</div>
+            <div class="body"><div class="mock-email" id="emailPrev">—</div></div>
+          </div>
+          <div class="mock">
+            <div class="tag">Boarding pass</div>
+            <div class="body">
+              <div class="mock-boarding">
+                <div class="small">Passenger</div>
+                <div class="big" id="boardingPrev">—</div>
+                <div class="small" style="margin-top:8px;">EDI → JFK · Seat 14A</div>
+              </div>
+            </div>
+          </div>
+          <div class="mock mock-cv">
+            <div class="tag">First CV, age 22</div>
+            <div class="body">
+              <span class="cv-name" id="cvPrev">—</span>
+              <div class="cv-sub">Graduate · Curious about everything</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="wrap narrow">
+
+<!-- AD SLOT: paste AdSense responsive unit here after approval -->
+<div class="ad-slot">Advertisement</div>
+
+<h2>Why hearing the name matters more than reading it</h2>
+<p>A name is spoken far more often than it's written — called across playgrounds, read from registers, announced in waiting rooms. Combinations that look elegant on a list can blur, rhyme or trip the tongue out loud. The voice test catches what the eye can't: names that run together, awkward stress patterns, and the "wait, how do you say that?" pause.</p>
+
+<p>The register button matters more than it looks: hearing the name surname-first — "Walker, Theodore?" — is how your child will hear it hundreds of times a year through school. Some names change character entirely when flipped.</p>
+
+<h2>The real-world previews</h2>
+<p>The mockups above show the name in four places it will genuinely live: a class register, a first email address, a boarding pass (surname first, capitals — the format that swallows long names), and the top of a first CV. Parents consistently say the CV preview is the one that changes their mind — it's the name as a stranger will meet it in twenty-two years.</p>
+
+<div class="callout">
+  <strong>How the voice works:</strong> we use your device's built-in speech voices — pick British, American or Australian above, so nothing you type ever leaves your browser. Voices vary slightly by phone and computer — try it on two devices for a second opinion.
+</div>
+
+<h2>More free name tools</h2>
+<div class="card-grid">
+  <a class="tool-link-card" href="index.html"><span class="emoji" aria-hidden="true">✅</span><h3>Full Name Checker</h3><p>Score the rhythm and flow with clear reasons.</p></a>
+  <a class="tool-link-card" href="initials-checker.html"><span class="emoji" aria-hidden="true">🔤</span><h3>Initials Checker</h3><p>Both initial orders, checked in one click.</p></a>
+  <a class="tool-link-card" href="compare-names.html"><span class="emoji" aria-hidden="true">⚖️</span><h3>Compare Two Names</h3><p>Your shortlist finalists, side by side.</p></a>
+</div>
+
+
+<h2>Popular middle name lists</h2>
+<div class="related-block callout">
+  <p>Curated, scored and testable with your surname: <a href="middle-names-florence.html">Florence</a> · <a href="middle-names-theodore.html">Theodore</a> · <a href="middle-names-muhammad.html">Muhammad</a> · <a href="middle-names-emmanuel.html">Emmanuel</a> · <a href="middle-names-archie.html">Archie</a> · <a href="middle-names-mia.html">Mia</a> · <a href="directory.html">all 22 lists</a></p>
+  <p><strong>Browse by theme:</strong> <a href="nature-middle-names.html">nature</a> · <a href="vintage-middle-names.html">vintage</a> · <a href="biblical-middle-names-for-girls.html">biblical (girls)</a> · <a href="biblical-middle-names-for-boys.html">biblical (boys)</a> · <a href="hebrew-middle-names.html">Hebrew</a> · <a href="muslim-middle-names.html">Muslim and Arabic</a></p>
+</div>
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:10px;">Middle Names Generator</p>
+      <p style="max-width:280px;">Free tools that let you hear, test and stress-check a baby name before it's forever. Scored, explained, and spoken aloud.</p>
+    </div>
+    <div>
+      <h4>Tools &amp; Games</h4>
+      <ul>
+        <li><a href="index.html">Middle name generator</a></li>
+        <li><a href="two-middle-names-generator.html">Two middle names generator</a></li>
+        <li><a href="name-battle.html">Baby name battle game</a></li>
+        <li><a href="full-name-checker.html">Baby name checker</a></li>
+        <li><a href="initials-checker.html">Initials checker</a></li>
+        <li><a href="sibling-name-checker.html">Sibling name checker</a></li>
+        <li><a href="say-my-name.html">Say my name aloud</a></li>
+        <li><a href="compare-names.html">Compare two names</a></li>
+        <li><a href="nickname-predictor.html">Nickname checker</a></li>
+        <li><a href="honour-name-helper.html">Honour name helper</a></li>
+        <li><a href="name-report.html">Printable name report</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Middle Names by Name</h4>
+      <ul>
+        <li><a href="middle-names-olivia.html">Middle names for Olivia</a></li>
+        <li><a href="middle-names-amelia.html">Middle names for Amelia</a></li>
+        <li><a href="middle-names-isla.html">Middle names for Isla</a></li>
+        <li><a href="middle-names-ava.html">Middle names for Ava</a></li>
+        <li><a href="middle-names-freya.html">Middle names for Freya</a></li>
+        <li><a href="middle-names-noah.html">Middle names for Noah</a></li>
+        <li><a href="middle-names-oliver.html">Middle names for Oliver</a></li>
+        <li><a href="middle-names-george.html">Middle names for George</a></li>
+        <li><a href="middle-names-leo.html">Middle names for Leo</a></li>
+        <li><a href="middle-names-muhammad.html">Middle names for Muhammad</a></li>
+        <li><a href="middle-names-emmanuel.html">Middle names for Emmanuel</a></li>
+        <li><a href="middle-names-lily.html">Middle names for Lily</a></li>
+        <li><a href="middle-names-ivy.html">Middle names for Ivy</a></li>
+        <li><a href="middle-names-florence.html">Middle names for Florence</a></li>
+        <li><a href="middle-names-willow.html">Middle names for Willow</a></li>
+        <li><a href="middle-names-mia.html">Middle names for Mia</a></li>
+        <li><a href="middle-names-grace.html">Middle names for Grace</a></li>
+        <li><a href="middle-names-arthur.html">Middle names for Arthur</a></li>
+        <li><a href="middle-names-theodore.html">Middle names for Theodore</a></li>
+        <li><a href="middle-names-oscar.html">Middle names for Oscar</a></li>
+        <li><a href="middle-names-henry.html">Middle names for Henry</a></li>
+        <li><a href="middle-names-archie.html">Middle names for Archie</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Name Ideas &amp; Meanings</h4>
+      <ul>
+        <li><a href="name-meanings.html">Name meanings lookup</a></li>
+        <li><a href="names-by-meaning.html">Names by meaning</a></li>
+        <li><a href="names-by-origin.html">Names by origin</a></li>
+        <li><a href="biblical-middle-names-for-boys.html">Biblical middle names (boys)</a></li>
+        <li><a href="biblical-middle-names-for-girls.html">Biblical middle names (girls)</a></li>
+        <li><a href="muslim-middle-names.html">Muslim &amp; Arabic middle names</a></li>
+        <li><a href="hebrew-middle-names.html">Hebrew middle names</a></li>
+        <li><a href="nature-middle-names.html">Nature middle names</a></li>
+        <li><a href="vintage-middle-names.html">Vintage middle names</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Guides &amp; Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#free-features">All free features</a></li>
+        <li><a href="how-to-choose-a-middle-name.html">How to choose a middle name</a></li>
+        <li><a href="can-you-have-two-middle-names.html">Two middle names guide</a></li>
+        <li><a href="directory.html">Browse everything</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy policy</a></li>
+        <li><a href="cookie-policy.html">Cookie policy</a></li>
+        <li><a href="terms.html">Terms of use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-note">
+    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun — nothing here is professional advice.</p>
+  </div>
+</footer>
+
+<div id="consent-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to show ads that keep these tools free. Your name inputs are never collected. <a href="cookie-policy.html">Cookie policy</a></p>
+  <button class="btn small coral" data-choice="accept">Accept</button>
+  <button class="btn small ghost" data-choice="reject" style="color:#E8E6F5;border-color:#55527A;">Essential only</button>
+</div>
+
+<script src="engine.js?v=9"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  document.querySelectorAll('input[name="accent"]').forEach(r => {
+    r.addEventListener("change", () => { window.NTF_LANG = r.value; });
+  });
+  const val = id => $(id).value.trim();
+  function fullName() {
+    return [val("firstName"), val("middleName"), val("lastName")].filter(Boolean).join(" ");
+  }
+  $("speakBtn").addEventListener("click", () => {
+    const n = fullName();
+    if (!n) { $("speakStatus").textContent = "Type a name first."; return; }
+    NTF.speak(n, $("speakStatus"));
+  });
+  $("registerBtn").addEventListener("click", () => {
+    const f = val("firstName"), l = val("lastName");
+    if (!f || !l) { $("speakStatus").textContent = "Enter a first name and surname."; return; }
+    NTF.speak(NTF.cap(l) + ", " + NTF.cap(f) + "?", $("speakStatus"));
+  });
+  $("previewBtn").addEventListener("click", () => {
+    const f = val("firstName"), m = val("middleName"), l = val("lastName");
+    if (!f || !l) { $("speakStatus").textContent = "Enter at least a first name and surname."; return; }
+    $("speakStatus").textContent = "";
+    const F = NTF.cap(f), M = m ? NTF.cap(m) : "", L = NTF.cap(l);
+    $("regName").textContent = L + ", " + F;
+    $("emailPrev").textContent = (f.charAt(0) + "." + l.replace(/\s+/g, "")).toLowerCase() + "@company.co.uk";
+    $("boardingPrev").textContent = (L + " / " + F + (M ? " " + M.charAt(0) : "")).toUpperCase();
+    $("cvPrev").textContent = F + (M ? " " + M : "") + " " + L;
+    $("result").classList.add("show");
+  });
+})();
+</script>
+<script>window.MNG_TURNSTILE_KEY = "";</script>
+<script src="gate.js?v=9"></script>
+</body>
+</html>

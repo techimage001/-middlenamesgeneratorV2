@@ -1,0 +1,12 @@
+REDIRECT KIT: namesthatflow.com -> middlenamesgenerator.com
+=============================================================
+In Hostinger, add namesthatflow.com as a website (or parked domain), then place
+a file named exactly ".htaccess" in its public_html containing:
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?namesthatflow\.com$ [NC]
+RewriteRule ^(.*)$ https://middlenamesgenerator.com/$1 [R=301,L]
+
+Alternatively use hPanel -> Domains -> namesthatflow.com -> Redirects and set a
+301 to https://middlenamesgenerator.com. Do the same later for any extra
+domains (e.g. boysnamesgenerator.com) you decide to park.

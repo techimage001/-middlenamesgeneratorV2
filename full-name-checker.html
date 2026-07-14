@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Name Checker: Test How Your Name Flows | Middle Names Generator</title>
+<meta name="description" content="Free baby name checker. See how a first name flows with your surname, catch awkward initials, and hear the full name aloud — with clear reasons, not a mystery score.">
+<link rel="canonical" href="https://middlenamesgenerator.com/full-name-checker.html">
+<meta property="og:title" content="Does your baby's name flow? Test it free">
+<meta property="og:description" content="Flow score with clear reasons, initials checker, and hear it said aloud.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://middlenamesgenerator.com/full-name-checker.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#5D4E8C">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=9">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Middle Names Generator — Baby Name Checker",
+  "url": "https://middlenamesgenerator.com/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free baby name checker that scores how a first, middle and last name flow together, checks initials, and reads the full name aloud."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know if a baby name goes with my surname?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Say the full name aloud and listen for three things: varied syllable rhythm (a 3–1–2 pattern usually flows better than 2–2–2), clean transitions where one name ends and the next begins with different sounds, and no rhyme between the first and last name. A name checker automates these checks and explains each one." }
+    },
+    {
+      "@type": "Question",
+      "name": "What initials should I avoid for a baby?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Check both the standard initials order (First–Middle–Last) and the monogram order (First–LAST–Middle), because they produce different acronyms. Avoid combinations that spell words a child could be teased about — these appear on schoolbags, towels, and later on email addresses." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this baby name checker free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every tool on Middle Names Generator is free with no subscription needed: three free uses, then a free account (just your email) unlocks unlimited use. The names you type are analysed in your browser and never sent to or stored on any server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does syllable rhythm matter in a baby name?",
+      "acceptedAnswer": { "@type": "Answer", "text": "When every name in a full name has the same number of syllables, the name can sound flat or sing-song. Varying the pattern — for example a three-syllable first name, one-syllable middle and two-syllable surname — creates a natural cadence that is easier to say and remember." }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://middlenamesgenerator.com/"}, {"@type": "ListItem", "position": 2, "name": "Baby Name Checker", "item": "https://middlenamesgenerator.com/full-name-checker.html"}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4138594802747479" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span> Middle Names Generator</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Generator</a>
+      <a href="index.html#free-features">All Free Features</a>
+      <a href="full-name-checker.html" aria-current="page">Name Checker</a>
+      <a href="initials-checker.html">Initials</a>
+      <a href="sibling-name-checker.html">Siblings</a>
+      <a href="say-my-name.html">Say It Aloud</a>
+      <a href="compare-names.html">Compare</a>
+      <a href="name-meanings.html">Meanings</a>
+      <a href="directory.html">Browse All</a>
+      <a href="nickname-predictor.html">Nicknames</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Free · No subscription · Names never stored</p>
+    <h1>Baby name checker: test how your name flows</h1>
+    <p class="lede">You'll say this name thousands of times. Type it once, and we'll score the rhythm, catch awkward initials, flag names that blur together — and explain <em>why</em>, not just hand you a mystery number.</p>
+
+    <div class="tool-card">
+      <div class="tool-grid">
+        <div class="field">
+          <label for="firstName">First name</label>
+          <input type="text" id="firstName" placeholder="Olivia" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="middleName">Middle name (optional)</label>
+          <input type="text" id="middleName" placeholder="Rose" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="lastName">Surname</label>
+          <input type="text" id="lastName" placeholder="Smith" autocomplete="off">
+        </div>
+      </div>
+      <div class="tool-actions">
+        <button class="btn" id="checkBtn">Check the flow</button>
+        <button class="btn coral" id="speakBtn" type="button">🔊 Say it aloud</button>
+      </div>
+      <p id="speakStatus" style="font-size:0.85rem;color:var(--ink-soft);margin:8px 0 0;"></p>
+
+      <div class="result" id="result" aria-live="polite">
+        <div class="score-row">
+          <div class="score-ring" id="scoreRing"><div class="inner"><span id="scoreNum">0</span></div></div>
+          <div>
+            <div class="rhythm" id="rhythm"></div>
+            <p style="margin:10px 0 0;font-size:0.85rem;color:var(--ink-soft);">Each dot is a syllable — the rhythm of the name as it's spoken.</p>
+          </div>
+        </div>
+        <div class="checks" id="checks"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="wrap narrow">
+
+<!-- AD SLOT 1: paste AdSense responsive unit here after approval -->
+<div class="ad-slot">Advertisement</div>
+
+<h2>More free name tools</h2>
+<div class="card-grid">
+  <a class="tool-link-card" href="initials-checker.html">
+    <span class="emoji" aria-hidden="true">🔤</span>
+    <h3>Initials Checker</h3>
+    <p>Catch initials — and monograms — that spell something unfortunate, before the birth certificate does.</p>
+  </a>
+  <a class="tool-link-card" href="sibling-name-checker.html">
+    <span class="emoji" aria-hidden="true">👧👦</span>
+    <h3>Sibling Name Checker</h3>
+    <p>Does the new name fit the set? Shared initials, rhymes and odd-one-out warnings.</p>
+  </a>
+  <a class="tool-link-card" href="say-my-name.html">
+    <span class="emoji" aria-hidden="true">🔊</span>
+    <h3>Say My Name</h3>
+    <p>Hear the full name read aloud in the accent you choose — the test most parents never do until it's too late.</p>
+  </a>
+  <a class="tool-link-card" href="compare-names.html">
+    <span class="emoji" aria-hidden="true">⚖️</span>
+    <h3>Compare Two Names</h3>
+    <p>Can't agree? Same surname, same checks, two columns — settle the shortlist with evidence.</p>
+  </a>
+  <a class="tool-link-card" href="nickname-predictor.html">
+    <span class="emoji" aria-hidden="true">🏷️</span>
+    <h3>Nickname Predictor</h3>
+    <p>One in five parents ends up preferring the nickname. See it — and the misread risk — first.</p>
+  </a>
+  <a class="tool-link-card" href="middle-names-olivia.html">
+    <span class="emoji" aria-hidden="true">✨</span>
+    <h3>Middle Name Finder</h3>
+    <p>Curated middle names that flow, by first name — with the checker built into every list.</p>
+  </a>
+</div>
+
+<h2>What makes a baby name flow?</h2>
+<p>Ask any midwife: the names parents regret aren't the "wrong" names — they're the combinations nobody said aloud until the registrar's office. A first name can be beautiful on a list and clumsy in front of your surname. Three things decide it:</p>
+
+<h3>Syllable rhythm across the full name</h3>
+<p>Full names with varied syllable counts — say, a three-syllable first name, one-syllable middle and two-syllable surname — have a natural cadence. When every name has the same count, the result can sound flat ("Grace Rose Smith") or sing-song. Our checker shows the pattern as rhythm dots so you can literally see it.</p>
+
+<h3>Clean transitions between names</h3>
+<p>When one name ends with the sound the next begins with, they blur into a single word when spoken: "Emma Alice" becomes "Emm-alice". Vowel-to-vowel joins have the same effect. This is the single most common flow problem — and the one hardest to spot on paper.</p>
+
+<h3>The initials test (both of them)</h3>
+<p>Everyone knows to check initials in First–Middle–Last order. Almost nobody checks the monogram order — First–<em>LAST</em>–Middle — which is how initials appear on embroidered towels, bags and traditional stationery, and which produces a completely different acronym. Our <a href="initials-checker.html">initials checker</a> tests both automatically.</p>
+
+<div class="callout">
+  <strong>Privacy, plainly:</strong> everything on this site runs in your browser. The names you type are never sent anywhere, stored anywhere, or seen by anyone. Test the embarrassing options freely.
+</div>
+
+<!-- AD SLOT 2 -->
+<div class="ad-slot">Advertisement</div>
+
+<h2>Frequently asked questions</h2>
+
+<details class="faq">
+  <summary>How do I know if a baby name goes with my surname?</summary>
+  <div class="faq-body"><p>Say it aloud and listen for varied rhythm, clean transitions and no first/last rhyme. Or type it into the checker above — it runs those exact tests and explains every result.</p></div>
+</details>
+<details class="faq">
+  <summary>What initials should I avoid?</summary>
+  <div class="faq-body"><p>Anything that spells a word your child could be teased about — in both initial orders. The full list of things to check is in our <a href="initials-checker.html">initials checker guide</a>.</p></div>
+</details>
+<details class="faq">
+  <summary>Is a "bad" flow score a reason to drop a name?</summary>
+  <div class="faq-body"><p>No — it's a reason to say the name aloud a few more times before deciding. The score highlights things worth noticing; plenty of much-loved names carry a quirk their parents chose deliberately. Unlike AI name raters, we show the exact reasons so you can disagree with any of them.</p></div>
+</details>
+<details class="faq">
+  <summary>Do you store the names I type?</summary>
+  <div class="faq-body"><p>No. The analysis runs entirely in your browser using JavaScript. Nothing you type leaves your device.</p></div>
+</details>
+
+
+<h2>Popular middle name lists</h2>
+<div class="related-block callout">
+  <p>Curated, scored and testable with your surname: <a href="middle-names-olivia.html">Olivia</a> · <a href="middle-names-lily.html">Lily</a> · <a href="middle-names-arthur.html">Arthur</a> · <a href="middle-names-theodore.html">Theodore</a> · <a href="middle-names-grace.html">Grace</a> · <a href="middle-names-oscar.html">Oscar</a> · <a href="directory.html">all 22 lists</a></p>
+  <p><strong>Browse by theme:</strong> <a href="nature-middle-names.html">nature</a> · <a href="vintage-middle-names.html">vintage</a> · <a href="biblical-middle-names-for-girls.html">biblical (girls)</a> · <a href="biblical-middle-names-for-boys.html">biblical (boys)</a> · <a href="hebrew-middle-names.html">Hebrew</a> · <a href="muslim-middle-names.html">Muslim and Arabic</a></p>
+</div>
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:10px;">Middle Names Generator</p>
+      <p style="max-width:280px;">Free tools that let you hear, test and stress-check a baby name before it's forever. Scored, explained, and spoken aloud.</p>
+    </div>
+    <div>
+      <h4>Tools &amp; Games</h4>
+      <ul>
+        <li><a href="index.html">Middle name generator</a></li>
+        <li><a href="two-middle-names-generator.html">Two middle names generator</a></li>
+        <li><a href="name-battle.html">Baby name battle game</a></li>
+        <li><a href="full-name-checker.html">Baby name checker</a></li>
+        <li><a href="initials-checker.html">Initials checker</a></li>
+        <li><a href="sibling-name-checker.html">Sibling name checker</a></li>
+        <li><a href="say-my-name.html">Say my name aloud</a></li>
+        <li><a href="compare-names.html">Compare two names</a></li>
+        <li><a href="nickname-predictor.html">Nickname checker</a></li>
+        <li><a href="honour-name-helper.html">Honour name helper</a></li>
+        <li><a href="name-report.html">Printable name report</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Middle Names by Name</h4>
+      <ul>
+        <li><a href="middle-names-olivia.html">Middle names for Olivia</a></li>
+        <li><a href="middle-names-amelia.html">Middle names for Amelia</a></li>
+        <li><a href="middle-names-isla.html">Middle names for Isla</a></li>
+        <li><a href="middle-names-ava.html">Middle names for Ava</a></li>
+        <li><a href="middle-names-freya.html">Middle names for Freya</a></li>
+        <li><a href="middle-names-noah.html">Middle names for Noah</a></li>
+        <li><a href="middle-names-oliver.html">Middle names for Oliver</a></li>
+        <li><a href="middle-names-george.html">Middle names for George</a></li>
+        <li><a href="middle-names-leo.html">Middle names for Leo</a></li>
+        <li><a href="middle-names-muhammad.html">Middle names for Muhammad</a></li>
+        <li><a href="middle-names-emmanuel.html">Middle names for Emmanuel</a></li>
+        <li><a href="middle-names-lily.html">Middle names for Lily</a></li>
+        <li><a href="middle-names-ivy.html">Middle names for Ivy</a></li>
+        <li><a href="middle-names-florence.html">Middle names for Florence</a></li>
+        <li><a href="middle-names-willow.html">Middle names for Willow</a></li>
+        <li><a href="middle-names-mia.html">Middle names for Mia</a></li>
+        <li><a href="middle-names-grace.html">Middle names for Grace</a></li>
+        <li><a href="middle-names-arthur.html">Middle names for Arthur</a></li>
+        <li><a href="middle-names-theodore.html">Middle names for Theodore</a></li>
+        <li><a href="middle-names-oscar.html">Middle names for Oscar</a></li>
+        <li><a href="middle-names-henry.html">Middle names for Henry</a></li>
+        <li><a href="middle-names-archie.html">Middle names for Archie</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Name Ideas &amp; Meanings</h4>
+      <ul>
+        <li><a href="name-meanings.html">Name meanings lookup</a></li>
+        <li><a href="names-by-meaning.html">Names by meaning</a></li>
+        <li><a href="names-by-origin.html">Names by origin</a></li>
+        <li><a href="biblical-middle-names-for-boys.html">Biblical middle names (boys)</a></li>
+        <li><a href="biblical-middle-names-for-girls.html">Biblical middle names (girls)</a></li>
+        <li><a href="muslim-middle-names.html">Muslim &amp; Arabic middle names</a></li>
+        <li><a href="hebrew-middle-names.html">Hebrew middle names</a></li>
+        <li><a href="nature-middle-names.html">Nature middle names</a></li>
+        <li><a href="vintage-middle-names.html">Vintage middle names</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Guides &amp; Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#free-features">All free features</a></li>
+        <li><a href="how-to-choose-a-middle-name.html">How to choose a middle name</a></li>
+        <li><a href="can-you-have-two-middle-names.html">Two middle names guide</a></li>
+        <li><a href="directory.html">Browse everything</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy policy</a></li>
+        <li><a href="cookie-policy.html">Cookie policy</a></li>
+        <li><a href="terms.html">Terms of use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-note">
+    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun — nothing here is professional advice.</p>
+  </div>
+</footer>
+
+<div id="consent-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to show ads that keep these tools free. Your name inputs are never collected. <a href="cookie-policy.html">Cookie policy</a></p>
+  <button class="btn small coral" data-choice="accept">Accept</button>
+  <button class="btn small ghost" data-choice="reject" style="color:#E8E6F5;border-color:#55527A;">Essential only</button>
+</div>
+
+<script src="engine.js?v=9"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  function run() {
+    const f = $("firstName").value, m = $("middleName").value, l = $("lastName").value;
+    if (!f.trim() || !l.trim()) { $("speakStatus").textContent = "Enter at least a first name and surname."; return; }
+    $("speakStatus").textContent = "";
+    const res = NTF.flowScore(f, m, l);
+    NTF.renderRhythm($("rhythm"), res.names, res.sylCounts);
+    NTF.renderChecks($("checks"), res.checks);
+    $("result").classList.add("show");
+    NTF.animateScore($("scoreNum"), $("scoreRing"), res.score);
+  }
+  $("checkBtn").addEventListener("click", run);
+  ["firstName","middleName","lastName"].forEach(id => {
+    $(id).addEventListener("keydown", e => { if (e.key === "Enter") run(); });
+  });
+  $("speakBtn").addEventListener("click", () => {
+    const parts = [$("firstName").value, $("middleName").value, $("lastName").value].filter(s => s.trim());
+    if (!parts.length) { $("speakStatus").textContent = "Type a name first."; return; }
+    NTF.speak(parts.join(" "), $("speakStatus"));
+  });
+})();
+</script>
+<script>window.MNG_TURNSTILE_KEY = "";</script>
+<script src="gate.js?v=9"></script>
+</body>
+</html>

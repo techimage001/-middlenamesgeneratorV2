@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Middle Name Generator: Names Scored With Your Surname</title>
+<meta name="description" content="Free middle name generator that scores every suggestion against your actual first name and surname — rhythm, initials and flow, with reasons. Hear any combination aloud.">
+<link rel="canonical" href="https://middlenamesgenerator.com/">
+<meta property="og:title" content="Middle Name Generator — suggestions scored with your surname">
+<meta property="og:description" content="Not another random list: every middle name is scored against your real surname, with reasons.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://middlenamesgenerator.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#5D4E8C">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=9">
+<style>
+.gen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-top: 22px; }
+.gen-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: 14px;
+  padding: 16px; position: relative;
+}
+.gen-card .full { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.05rem; }
+.gen-card .mid { color: var(--plum); }
+.gen-card .why { font-size: 0.82rem; color: var(--ink-soft); margin: 6px 0 0; }
+.gen-card .warn-line { font-size: 0.8rem; color: var(--coral-deep); margin: 4px 0 0; font-weight: 700; }
+.gen-card .meta { font-size: 0.75rem; color: var(--ink-soft); margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+.gen-card .score-pill {
+  position: absolute; top: -10px; right: 12px;
+  background: var(--green); color: #fff; font-weight: 800;
+  border-radius: 12px; padding: 2px 10px; font-size: 0.85rem;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.gen-card button.hear {
+  background: none; border: none; cursor: pointer; font-size: 1rem; padding: 2px 4px;
+}
+.gender-row { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.gender-row label {
+  border: 2px solid var(--line); border-radius: 30px; padding: 8px 18px;
+  font-weight: 700; cursor: pointer; background: var(--white); font-size: 0.92rem;
+}
+.gender-row input { position: absolute; opacity: 0; }
+.gender-row label:has(input:checked) { border-color: var(--plum); color: var(--plum); background: #F1EDFB; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Middle Name Generator",
+  "url": "https://middlenamesgenerator.com/",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free middle name generator that scores each suggestion against the user's first name and surname using transparent rhythm, sound and initials checks."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does this middle name generator work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Enter a first name and surname, and the generator tests a curated pool of middle names against your actual full name — checking syllable rhythm, sound transitions, rhyme risk and initials in both orders. Each suggestion is scored out of 100 with the reason shown, so you can judge the logic rather than trust a random list." } },
+    { "@type": "Question", "name": "What makes a good middle name?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Three things: varied syllable rhythm across the full name (a 3–1–2 pattern usually flows better than 2–2–2), clean transitions where one name ends and the next begins with different sounds, and initials that don't spell anything unfortunate in either standard or monogram order." } },
+    { "@type": "Question", "name": "Is the middle name generator free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every tool is free with no subscription and no payment details needed. You get three free uses to try everything; after that, a free account (just your email) unlocks unlimited use of every tool on this site." } },
+    { "@type": "Question", "name": "Can I hear the full name said aloud?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every suggestion has a listen button that reads the complete first, middle and last name aloud in your choice of British, American or Australian voice — the test most parents never do until the registrar reads it back." } }
+  ]
+}
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Middle Names Generator", "url": "https://middlenamesgenerator.com/", "logo": "https://middlenamesgenerator.com/icon.svg", "description": "Free baby name tools: scored middle name suggestions, flow checker, initials, meanings and more."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Middle Names Generator", "url": "https://middlenamesgenerator.com/"}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4138594802747479" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span> Middle Names Generator</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Generator</a>
+      <a href="index.html#free-features">All Free Features</a>
+      <a href="full-name-checker.html">Name Checker</a>
+      <a href="initials-checker.html">Initials</a>
+      <a href="sibling-name-checker.html">Siblings</a>
+      <a href="say-my-name.html">Say It Aloud</a>
+      <a href="compare-names.html">Compare</a>
+      <a href="name-meanings.html">Meanings</a>
+      <a href="directory.html">Browse All</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-art" aria-hidden="true" viewBox="0 0 340 300" width="300" height="265" style="position:absolute;top:12px;right:3%;width:300px;max-width:38vw;height:auto;pointer-events:none;z-index:0;" xmlns="http://www.w3.org/2000/svg">
+    <!-- Original illustration drawn for this site: sleeping baby in a crescent moon -->
+    <circle cx="70" cy="46" r="3.5" fill="#E9A13B" opacity="0.9"/>
+    <circle cx="288" cy="86" r="2.6" fill="#F08A7E" opacity="0.85"/>
+    <circle cx="250" cy="30" r="2.2" fill="#5D4E8C" opacity="0.6"/>
+    <path d="M46 120 l3.4 7.4 7.4 3.4 -7.4 3.4 -3.4 7.4 -3.4-7.4 -7.4-3.4 7.4-3.4z" fill="#E9A13B" opacity="0.75"/>
+    <path d="M296 176 l2.6 5.6 5.6 2.6 -5.6 2.6 -2.6 5.6 -2.6-5.6 -5.6-2.6 5.6-2.6z" fill="#F08A7E" opacity="0.7"/>
+    <path d="M118 32 l2 4.4 4.4 2 -4.4 2 -2 4.4 -2-4.4 -4.4-2 4.4-2z" fill="#5D4E8C" opacity="0.5"/>
+    <!-- crescent moon cradle -->
+    <path d="M84 148 A104 104 0 1 0 268 244 A86 86 0 0 1 84 148 Z" fill="#F2C14E"/>
+    <path d="M96 160 A88 88 0 1 0 254 240 A74 74 0 0 1 96 160 Z" fill="#E9A13B" opacity="0.35"/>
+    <!-- baby body (swaddle) -->
+    <path d="M132 208 q10 -26 42 -26 q34 0 44 26 q8 22 -12 32 q-16 8 -34 8 q-18 0 -32 -10 q-14 -10 -8 -30 z" fill="#FFFFFF"/>
+    <path d="M140 216 q14 6 34 6 q22 0 36 -8" fill="none" stroke="#DCD6EE" stroke-width="4" stroke-linecap="round"/>
+    <!-- head -->
+    <circle cx="150" cy="182" r="27" fill="#F6E3D3"/>
+    <!-- curl of hair -->
+    <path d="M146 156 q6 -8 14 -3 q-8 0 -9 7" fill="none" stroke="#5D4E8C" stroke-width="3.4" stroke-linecap="round"/>
+    <!-- sleeping eyes + smile -->
+    <path d="M138 184 q4 4 8 0" fill="none" stroke="#4A3F70" stroke-width="3" stroke-linecap="round"/>
+    <path d="M156 184 q4 4 8 0" fill="none" stroke="#4A3F70" stroke-width="3" stroke-linecap="round"/>
+    <path d="M147 196 q4 3.4 8 0" fill="none" stroke="#D96B5E" stroke-width="2.6" stroke-linecap="round"/>
+    <!-- rosy cheek -->
+    <circle cx="134" cy="192" r="4.4" fill="#F08A7E" opacity="0.5"/>
+    <!-- zzz -->
+    <g fill="none" stroke="#5D4E8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+      <path d="M212 128 h14 l-14 14 h14"/>
+      <path d="M240 104 h10 l-10 10 h10"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <p class="kicker">Free · Scored, not random · Nothing stored</p>
+    <h1>Middle name generator</h1>
+    <p class="lede">Every other generator hands you a random list. This one scores each middle name against your <em>actual</em> first name and surname — rhythm, initials, flow — and shows its reasoning. Then it says the whole thing aloud.</p>
+
+    <div class="tool-card">
+      <div class="tool-grid">
+        <div class="field">
+          <label for="firstName">First name</label>
+          <input type="text" id="firstName" placeholder="Olivia" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="lastName">Surname</label>
+          <input type="text" id="lastName" placeholder="Smith" autocomplete="off">
+        </div>
+        <div class="field">
+          <label>Style</label>
+          <div class="gender-row" role="radiogroup" aria-label="Name style">
+            <label><input type="radio" name="gender" value="girl" checked>Girl</label>
+            <label><input type="radio" name="gender" value="boy">Boy</label>
+            <label><input type="radio" name="gender" value="any">Any</label>
+          </div>
+        </div>
+      </div>
+      <div class="tool-actions">
+        <button class="btn" id="genBtn">Generate middle names</button>
+        <button class="btn ghost" id="againBtn" type="button" style="display:none;">↻ More suggestions</button>
+        <button class="btn coral" id="surpriseBtn" type="button">🎲 Surprise me</button>
+        <button class="btn ghost" id="resetBtn" type="button" style="display:none;">✕ New search</button>
+      </div>
+      <div class="gender-row" role="radiogroup" aria-label="Voice accent" style="margin-top:12px;">
+        <span style="font-size:0.8rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-soft);align-self:center;">Voice:</span>
+        <label><input type="radio" name="accent" value="en-GB" checked>&#127468;&#127463;</label>
+        <label><input type="radio" name="accent" value="en-US">&#127482;&#127480;</label>
+        <label><input type="radio" name="accent" value="en-AU">&#127462;&#127482;</label>
+      </div>
+      <p id="genStatus" style="font-size:0.85rem;color:var(--ink-soft);margin:8px 0 0;"></p>
+
+      <div class="result" id="result" aria-live="polite">
+        <div class="gen-grid" id="genGrid"></div>
+        <div id="shortlistWrap" style="display:none;margin-top:22px;">
+          <h3 style="margin:0 0 10px;">❤️ Your shortlist <span id="slCount" style="font-weight:400;color:var(--ink-soft);font-size:0.9rem;"></span></h3>
+          <div class="checks" id="slList"></div>
+          <div class="tool-actions" style="margin-top:12px;">
+            <button class="btn small coral" id="slShare" type="button">Share the shortlist</button>
+            <a class="btn small ghost" href="name-report.html">Print a full name report</a>
+          </div>
+          <p style="font-size:0.8rem;color:var(--ink-soft);margin:8px 0 0;">Saved on this device only — nothing is sent anywhere.</p>
+        </div>
+        <p style="font-size:0.85rem;color:var(--ink-soft);margin-top:14px;">Scores come from transparent checks — rhythm, sound transitions, rhyme and initials — not an AI black box. Tap 🔊 to hear any full name. Found a contender? Run it through the <a href="full-name-checker.html">full name checker</a> for the complete breakdown.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="wrap narrow">
+
+<!-- AD SLOT 1: paste AdSense responsive unit here after approval -->
+<div class="ad-slot">Advertisement</div>
+
+<h2>Why scored suggestions beat random lists</h2>
+<p>Type "middle names" into any other generator and you'll get the same shuffled list whether your surname is Lee or Fotherington-Smythe. That's the flaw this tool fixes: a middle name doesn't flow in the abstract — it flows (or doesn't) between <em>your</em> first name and <em>your</em> surname. Olivia Rose Smith scores differently from Olivia Rose Ross, and the difference has reasons: syllable rhythm, the sounds where names join, rhyme risk, and what the initials spell in both standard and monogram order.</p>
+
+<p>Every suggestion above shows its score and its strongest reason, and flags any weakness honestly. Disagree with a check? Good — that's the point of showing them. The tool's job is to surface what you'd only otherwise discover at the registrar's desk.</p>
+
+
+<h2 id="free-features">What other name apps charge for, free here</h2>
+<p>The baby name market has drifted towards subscriptions: daily swipe caps, paywalled filters, premium "name packs" and pro-only pairing tools. Every one of those features is free on this site, unlimited, after a quick free signup.</p>
+<p><b style="color:var(--green-deep)">Currently 100% free, including the signup itself. No payment or card details needed.</b></p>
+<div class="free-compare">
+<table>
+<thead><tr><th>Feature</th><th>Typical name apps</th><th>Here</th></tr></thead>
+<tbody>
+<tr><td>Pair middle names with your actual surname</td><td class="elsewhere">A paid PRO upgrade</td><td class="here">Free</td></tr>
+<tr><td>Unlimited suggestions, no daily cap</td><td class="elsewhere">Capped free tiers, monthly fee to unlock</td><td class="here">Free</td></tr>
+<tr><td>Themed collections: vintage, nature, biblical and more</td><td class="elsewhere">Sold as premium name packs</td><td class="here">Free</td></tr>
+<tr><td>Hear any full name read aloud</td><td class="elsewhere">A paid pronunciation feature</td><td class="here">Free</td></tr>
+<tr><td>Saved shortlist on your device</td><td class="elsewhere">Unlimited favourites paywalled</td><td class="here">Free</td></tr>
+<tr><td>Scored suggestions with visible reasoning</td><td class="elsewhere">AI picks metered behind subscriptions</td><td class="here">Free</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Popular middle name searches</h2>
+<div class="card-grid">
+  <a class="tool-link-card" href="middle-names-olivia.html"><span class="emoji" aria-hidden="true">🌸</span><h3>Middle Names for Olivia</h3><p>Curated and testable — the full list with the checker built in.</p></a>
+  <a class="tool-link-card" href="middle-names-noah.html"><span class="emoji" aria-hidden="true">⭐</span><h3>Middle Names for Noah</h3><p>One-syllable classics to grand formal picks, scored live.</p></a>
+  <a class="tool-link-card" href="full-name-checker.html"><span class="emoji" aria-hidden="true">✅</span><h3>Already have a shortlist?</h3><p>Test your own combination in the full name checker.</p></a>
+</div>
+<p style="margin-top:14px;font-size:0.92rem;">All 22 middle-name lists: <a href="middle-names-olivia.html">Olivia</a> · <a href="middle-names-amelia.html">Amelia</a> · <a href="middle-names-isla.html">Isla</a> · <a href="middle-names-ava.html">Ava</a> · <a href="middle-names-freya.html">Freya</a> · <a href="middle-names-noah.html">Noah</a> · <a href="middle-names-oliver.html">Oliver</a> · <a href="middle-names-george.html">George</a> · <a href="middle-names-leo.html">Leo</a> · <a href="middle-names-muhammad.html">Muhammad</a> · <a href="middle-names-emmanuel.html">Emmanuel</a> · <a href="middle-names-lily.html">Lily</a> · <a href="middle-names-ivy.html">Ivy</a> · <a href="middle-names-florence.html">Florence</a> · <a href="middle-names-willow.html">Willow</a> · <a href="middle-names-mia.html">Mia</a> · <a href="middle-names-grace.html">Grace</a> · <a href="middle-names-arthur.html">Arthur</a> · <a href="middle-names-theodore.html">Theodore</a> · <a href="middle-names-oscar.html">Oscar</a> · <a href="middle-names-henry.html">Henry</a> · <a href="middle-names-archie.html">Archie</a></p>
+
+<h2>Browse middle names by theme</h2>
+<div class="card-grid">
+  <a class="tool-link-card" href="name-battle.html"><span class="emoji" aria-hidden="true">⚔️</span><h3>Name Battle</h3><p>Two names duel, your instinct ranks the shortlist. Couples: play separately, compare.</p></a>
+  <a class="tool-link-card" href="names-by-origin.html"><span class="emoji" aria-hidden="true">🌍</span><h3>Names by Origin</h3><p>Hebrew, Arabic, Irish, Norse and more — heritage names with meanings.</p></a>
+  <a class="tool-link-card" href="directory.html"><span class="emoji" aria-hidden="true">🧭</span><h3>Browse Everything</h3><p>Every tool, game, list and guide — one page.</p></a>
+  <a class="tool-link-card" href="two-middle-names-generator.html"><span class="emoji" aria-hidden="true">➕</span><h3>Two Middle Names</h3><p>Complete pairs, scored across all four names.</p></a>
+  <a class="tool-link-card" href="names-by-meaning.html"><span class="emoji" aria-hidden="true">💌</span><h3>Names by Meaning</h3><p>Start from love, light or strength and work backwards.</p></a>
+  <a class="tool-link-card" href="name-report.html"><span class="emoji" aria-hidden="true">🖨️</span><h3>Full Name Report</h3><p>Everything on one printable page — for the grandparents.</p></a>
+  <a class="tool-link-card" href="name-meanings.html"><span class="emoji" aria-hidden="true">📖</span><h3>Name Meanings</h3><p>You found the name — now, what does it mean? Honest origins, debates included.</p></a>
+  <a class="tool-link-card" href="honour-name-helper.html"><span class="emoji" aria-hidden="true">💝</span><h3>Honour Name Helper</h3><p>Two grandmothers, one baby? Compare family-name orders, scored — the diplomatic way out.</p></a>
+  <a class="tool-link-card" href="biblical-middle-names-for-boys.html"><span class="emoji" aria-hidden="true">📖</span><h3>Biblical (Boys)</h3><p>James to Ezra, testable live.</p></a>
+  <a class="tool-link-card" href="biblical-middle-names-for-girls.html"><span class="emoji" aria-hidden="true">🕊️</span><h3>Biblical (Girls)</h3><p>Ruth, Naomi, Esther and more.</p></a>
+  <a class="tool-link-card" href="muslim-middle-names.html"><span class="emoji" aria-hidden="true">🌙</span><h3>Muslim &amp; Arabic</h3><p>Noor to Ibrahim, scored with your surname.</p></a>
+  <a class="tool-link-card" href="hebrew-middle-names.html"><span class="emoji" aria-hidden="true">✡️</span><h3>Hebrew</h3><p>Talia, Noam, Eliana and friends.</p></a>
+  <a class="tool-link-card" href="nature-middle-names.html"><span class="emoji" aria-hidden="true">🌿</span><h3>Nature</h3><p>Wren, River, Juniper — the brave slot.</p></a>
+  <a class="tool-link-card" href="vintage-middle-names.html"><span class="emoji" aria-hidden="true">🕰️</span><h3>Vintage</h3><p>Great-grandparent gold, modern variants included.</p></a>
+  <a class="tool-link-card" href="how-to-choose-a-middle-name.html"><span class="emoji" aria-hidden="true">🧭</span><h3>How to Choose</h3><p>The four-step method.</p></a>
+</div>
+
+<h2>More free name tools</h2>
+<div class="card-grid">
+  <a class="tool-link-card" href="initials-checker.html"><span class="emoji" aria-hidden="true">🔤</span><h3>Initials Checker</h3><p>Both initial orders — including the monogram order everyone forgets.</p></a>
+  <a class="tool-link-card" href="sibling-name-checker.html"><span class="emoji" aria-hidden="true">👧👦</span><h3>Sibling Name Checker</h3><p>Does the new name fit the set you've already started?</p></a>
+  <a class="tool-link-card" href="say-my-name.html"><span class="emoji" aria-hidden="true">🔊</span><h3>Say My Name</h3><p>The voice test, plus the name on a register, email and CV.</p></a>
+  <a class="tool-link-card" href="compare-names.html"><span class="emoji" aria-hidden="true">⚖️</span><h3>Compare Two Names</h3><p>Settle the shortlist argument with evidence.</p></a>
+  <a class="tool-link-card" href="nickname-predictor.html"><span class="emoji" aria-hidden="true">🏷️</span><h3>Nickname Checker</h3><p>See the shortenings before the playground invents them.</p></a>
+</div>
+
+<!-- AD SLOT 2 -->
+<div class="ad-slot">Advertisement</div>
+
+<h2>Frequently asked questions</h2>
+<details class="faq">
+  <summary>How does this middle name generator work?</summary>
+  <div class="faq-body"><p>It tests a curated pool of names against your actual first name and surname — rhythm, sound transitions, rhyme and initials in both orders — and scores each out of 100 with the reason shown.</p></div>
+</details>
+<details class="faq">
+  <summary>What makes a good middle name?</summary>
+  <div class="faq-body"><p>Varied syllable rhythm, clean transitions between names, and safe initials in both standard and monogram order. The full logic is explained in the <a href="full-name-checker.html">name checker</a>.</p></div>
+</details>
+<details class="faq">
+  <summary>Is it free? Do you store the names?</summary>
+  <div class="faq-body"><p>Every tool is free with no subscription and no payment details needed. You get three free uses; after that, a free account (just your email) unlocks unlimited use of every tool. The names you type are analysed in your browser and never stored on our servers; only the email you sign up with is kept, and you can unsubscribe or ask for it to be deleted at any time.</p></div>
+</details>
+<details class="faq">
+  <summary>Why isn't this AI-powered?</summary>
+  <div class="faq-body"><p>Deliberately. AI name tools give you a score with no explanation. Ours uses transparent, deterministic checks so every result comes with its reasoning attached — and you're free to disagree with any of it.</p></div>
+</details>
+
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:10px;">Middle Names Generator</p>
+      <p style="max-width:280px;">Free tools that let you hear, test and stress-check a baby name before it's forever. Scored, explained, and spoken aloud.</p>
+    </div>
+    <div>
+      <h4>Tools &amp; Games</h4>
+      <ul>
+        <li><a href="index.html">Middle name generator</a></li>
+        <li><a href="two-middle-names-generator.html">Two middle names generator</a></li>
+        <li><a href="name-battle.html">Baby name battle game</a></li>
+        <li><a href="full-name-checker.html">Baby name checker</a></li>
+        <li><a href="initials-checker.html">Initials checker</a></li>
+        <li><a href="sibling-name-checker.html">Sibling name checker</a></li>
+        <li><a href="say-my-name.html">Say my name aloud</a></li>
+        <li><a href="compare-names.html">Compare two names</a></li>
+        <li><a href="nickname-predictor.html">Nickname checker</a></li>
+        <li><a href="honour-name-helper.html">Honour name helper</a></li>
+        <li><a href="name-report.html">Printable name report</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Middle Names by Name</h4>
+      <ul>
+        <li><a href="middle-names-olivia.html">Middle names for Olivia</a></li>
+        <li><a href="middle-names-amelia.html">Middle names for Amelia</a></li>
+        <li><a href="middle-names-isla.html">Middle names for Isla</a></li>
+        <li><a href="middle-names-ava.html">Middle names for Ava</a></li>
+        <li><a href="middle-names-freya.html">Middle names for Freya</a></li>
+        <li><a href="middle-names-noah.html">Middle names for Noah</a></li>
+        <li><a href="middle-names-oliver.html">Middle names for Oliver</a></li>
+        <li><a href="middle-names-george.html">Middle names for George</a></li>
+        <li><a href="middle-names-leo.html">Middle names for Leo</a></li>
+        <li><a href="middle-names-muhammad.html">Middle names for Muhammad</a></li>
+        <li><a href="middle-names-emmanuel.html">Middle names for Emmanuel</a></li>
+        <li><a href="middle-names-lily.html">Middle names for Lily</a></li>
+        <li><a href="middle-names-ivy.html">Middle names for Ivy</a></li>
+        <li><a href="middle-names-florence.html">Middle names for Florence</a></li>
+        <li><a href="middle-names-willow.html">Middle names for Willow</a></li>
+        <li><a href="middle-names-mia.html">Middle names for Mia</a></li>
+        <li><a href="middle-names-grace.html">Middle names for Grace</a></li>
+        <li><a href="middle-names-arthur.html">Middle names for Arthur</a></li>
+        <li><a href="middle-names-theodore.html">Middle names for Theodore</a></li>
+        <li><a href="middle-names-oscar.html">Middle names for Oscar</a></li>
+        <li><a href="middle-names-henry.html">Middle names for Henry</a></li>
+        <li><a href="middle-names-archie.html">Middle names for Archie</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Name Ideas &amp; Meanings</h4>
+      <ul>
+        <li><a href="name-meanings.html">Name meanings lookup</a></li>
+        <li><a href="names-by-meaning.html">Names by meaning</a></li>
+        <li><a href="names-by-origin.html">Names by origin</a></li>
+        <li><a href="biblical-middle-names-for-boys.html">Biblical middle names (boys)</a></li>
+        <li><a href="biblical-middle-names-for-girls.html">Biblical middle names (girls)</a></li>
+        <li><a href="muslim-middle-names.html">Muslim &amp; Arabic middle names</a></li>
+        <li><a href="hebrew-middle-names.html">Hebrew middle names</a></li>
+        <li><a href="nature-middle-names.html">Nature middle names</a></li>
+        <li><a href="vintage-middle-names.html">Vintage middle names</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Guides &amp; Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#free-features">All free features</a></li>
+        <li><a href="how-to-choose-a-middle-name.html">How to choose a middle name</a></li>
+        <li><a href="can-you-have-two-middle-names.html">Two middle names guide</a></li>
+        <li><a href="directory.html">Browse everything</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy policy</a></li>
+        <li><a href="cookie-policy.html">Cookie policy</a></li>
+        <li><a href="terms.html">Terms of use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-note">
+    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun — nothing here is professional advice.</p>
+  </div>
+</footer>
+
+<div id="consent-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to show ads that keep these tools free. Your name inputs are never collected. <a href="cookie-policy.html">Cookie policy</a></p>
+  <button class="btn small coral" data-choice="accept">Accept</button>
+  <button class="btn small ghost" data-choice="reject" style="color:#E8E6F5;border-color:#55527A;">Essential only</button>
+</div>
+
+<script src="engine.js?v=9"></script>
+<script src="meanings.js?v=9"></script>
+<script src="shortlist.js?v=9"></script>
+<script src="generator.js?v=9"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  document.querySelectorAll('input[name="accent"]').forEach(r => {
+    r.addEventListener("change", () => { window.NTF_LANG = r.value; });
+  });
+  function gender() {
+    const r = document.querySelector('input[name="gender"]:checked');
+    return r ? r.value : "any";
+  }
+  function run() {
+    const f = $("firstName").value.trim(), l = $("lastName").value.trim();
+    if (!f || !l) { $("genStatus").textContent = "Enter a first name and surname."; return; }
+    $("genStatus").textContent = "";
+    const results = MNG.generate(f, l, gender(), 12);
+    const grid = $("genGrid");
+    grid.innerHTML = "";
+    results.forEach(r => {
+      const card = document.createElement("div");
+      card.className = "gen-card";
+      const full = NTF.cap(f) + " " + r.name + " " + NTF.cap(l);
+      card.innerHTML =
+        '<span class="score-pill"></span>' +
+        '<div class="full"></div>' +
+        '<p class="why"></p>' +
+        (r.warning ? '<p class="warn-line"></p>' : '') +
+        '<div class="meta"><span class="init"></span><span class="card-btns"><button class="hear save" title="Save to shortlist" aria-label="Save to shortlist">🤍</button><button class="hear copyb" title="Copy name" aria-label="Copy this name">📋</button><button class="hear" title="Hear it aloud" aria-label="Hear this name aloud">🔊</button></span></div>';
+      card.querySelector(".score-pill").textContent = r.score;
+      const fullEl = card.querySelector(".full");
+      fullEl.innerHTML = NTF.cap(f) + ' <span class="mid"></span> ' + NTF.cap(l);
+      fullEl.querySelector(".mid").textContent = r.name;
+      card.querySelector(".why").textContent = r.reason + " (" + r.syl + ")";
+      const mean = (window.NTF_MEANINGS || {})[r.name.toLowerCase()];
+      if (mean) {
+        const mp = document.createElement("p");
+        mp.className = "why";
+        mp.style.fontStyle = "italic";
+        mp.textContent = r.name + " means \u201C" + mean[1] + "\u201D \u00B7 " + mean[0];
+        card.querySelector(".why").after(mp);
+      }
+      if (r.warning) card.querySelector(".warn-line").textContent = "⚠ " + r.warning;
+      card.querySelector(".init").textContent = r.initials;
+      card.querySelector('button[title="Hear it aloud"]').addEventListener("click", () => NTF.speak(full));
+      const saveBtn = card.querySelector(".save");
+      if (NTFS.has(full)) saveBtn.textContent = "❤️";
+      saveBtn.addEventListener("click", () => {
+        if (NTFS.has(full)) { NTFS.remove(full); saveBtn.textContent = "🤍"; }
+        else { NTFS.add({ full: full, score: r.score }); saveBtn.textContent = "❤️"; }
+        renderShortlist();
+      });
+      card.querySelector(".copyb").addEventListener("click", e => NTFS.copy(full, e.target));
+      grid.appendChild(card);
+    });
+    $("result").classList.add("show");
+    $("againBtn").style.display = "inline-flex";
+    $("resetBtn").style.display = "inline-flex";
+  }
+  $("genBtn").addEventListener("click", run);
+  const SURPRISE_G = ["Olivia","Amelia","Isla","Ava","Freya","Charlotte","Willow","Elodie","Maeve","Aurora"];
+  const SURPRISE_B = ["Noah","Oliver","Leo","Arthur","Theodore","Muhammad","Luca","Finn","Ezra","Hugo"];
+  $("surpriseBtn").addEventListener("click", () => {
+    const g = gender();
+    const pool = g === "boy" ? SURPRISE_B : g === "girl" ? SURPRISE_G : SURPRISE_G.concat(SURPRISE_B);
+    $("firstName").value = pool[Math.floor(Math.random() * pool.length)];
+    if (!$("lastName").value.trim()) $("lastName").value = "Smith";
+    run();
+  });
+  $("againBtn").addEventListener("click", run);
+  $("resetBtn").addEventListener("click", () => {
+    $("firstName").value = ""; $("lastName").value = "";
+    $("genGrid").innerHTML = "";
+    $("result").classList.remove("show");
+    $("againBtn").style.display = "none";
+    $("resetBtn").style.display = "none";
+    $("genStatus").textContent = "";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    $("firstName").focus();
+  });
+  ["firstName","lastName"].forEach(id => {
+    $(id).addEventListener("keydown", e => { if (e.key === "Enter") run(); });
+  });
+  window.renderShortlist = function() {
+    const list = NTFS.load();
+    const wrap = $("shortlistWrap");
+    if (!list.length) { wrap.style.display = "none"; return; }
+    wrap.style.display = "block";
+    $("slCount").textContent = "(" + list.length + ")";
+    const box = $("slList");
+    box.innerHTML = "";
+    list.forEach(item => {
+      const row = document.createElement("div");
+      row.className = "check pass";
+      row.innerHTML = '<div class="icon">' + item.score + '</div><div style="flex:1;"><strong></strong></div><span class="card-btns"><button class="hear" title="Hear it">🔊</button><button class="hear" title="Copy">📋</button><button class="hear" title="Remove">✕</button></span>';
+      row.querySelector("strong").textContent = item.full;
+      const btns = row.querySelectorAll("button");
+      btns[0].addEventListener("click", () => NTF.speak(item.full));
+      btns[1].addEventListener("click", e => NTFS.copy(item.full, e.target));
+      btns[2].addEventListener("click", () => { NTFS.remove(item.full); renderShortlist(); });
+      box.appendChild(row);
+    });
+  };
+  $("slShare").addEventListener("click", () => {
+    const list = NTFS.load();
+    if (list.length) NTFS.share("Our baby name shortlist:\n" + list.map(x => "• " + x.full + " (" + x.score + "/100)").join("\n"));
+  });
+  renderShortlist();
+})();
+</script>
+<script>window.MNG_TURNSTILE_KEY = "";</script>
+<script src="gate.js?v=9"></script>
+</body>
+</html>

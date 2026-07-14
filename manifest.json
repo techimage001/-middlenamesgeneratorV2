@@ -1,0 +1,10 @@
+{
+  "name": "Middle Names Generator",
+  "short_name": "MiddleNames",
+  "description": "Free baby name tools: scored middle name suggestions, flow checker, initials, meanings and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F6FB",
+  "theme_color": "#5D4E8C",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

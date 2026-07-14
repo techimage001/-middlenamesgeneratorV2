@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honour Name Helper: Fit a Family Name In, Fairly | Middle Names Generator</title>
+<meta name="description" content="Torn between two family names? The honour name helper scores both middle-name orders, tests single honour names, and suggests modern variants of dated family names.">
+<link rel="canonical" href="https://middlenamesgenerator.com/honour-name-helper.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#5D4E8C">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=9">
+<style>
+.order-card { background: var(--paper); border-radius: 14px; padding: 18px; margin-top: 14px; }
+.order-card.best { outline: 3px solid var(--gold); }
+.order-card h3 { margin-top: 0; display:flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.mod-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 12px; overflow: hidden; font-size: 0.94rem; }
+.mod-table th { background: var(--plum); color: #fff; text-align: left; padding: 10px 14px; }
+.mod-table td { padding: 10px 14px; border-top: 1px solid var(--line); }
+.table-scroll { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); margin: 1rem 0; }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+ {"@type":"Question","name":"How do you choose between two family names for a middle name?","acceptedAnswer":{"@type":"Answer","text":"The fairest fixes are: use both as a double middle name and let sound decide the order; use one now and plan the other for a future child; or use a modern variant of the harder name so both sides are honoured. When couples explain that the order was chosen purely for rhythm, families almost always accept it."}},
+ {"@type":"Question","name":"Does the order of two middle names mean anything?","acceptedAnswer":{"@type":"Answer","text":"Traditionally no — parents overwhelmingly report choosing the order that sounds best, not ranking relatives. Sharing a sound-based reason (this order avoids two vowels colliding, for example) defuses most family sensitivities."}}
+]}
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://middlenamesgenerator.com/"}, {"@type": "ListItem", "position": 2, "name": "Honour Name Helper", "item": "https://middlenamesgenerator.com/honour-name-helper.html"}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4138594802747479" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="head-inner">
+    <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><span></span><span></span><span></span></span> Middle Names Generator</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Generator</a>
+      <a href="index.html#free-features">All Free Features</a>
+      <a href="full-name-checker.html">Name Checker</a>
+      <a href="initials-checker.html">Initials</a>
+      <a href="sibling-name-checker.html">Siblings</a>
+      <a href="say-my-name.html">Say It Aloud</a>
+      <a href="compare-names.html">Compare</a>
+      <a href="name-meanings.html">Meanings</a>
+      <a href="directory.html">Browse All</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">For the hardest naming question of all: family</p>
+    <h1>Honour name helper</h1>
+    <p class="lede">Two grandmothers, one baby. The most emotional dilemma in naming, solved the diplomatic way: test one family name, or both together — the tool scores every order so the <em>sound</em> makes the decision, not the family politics.</p>
+
+    <div class="tool-card">
+      <div class="tool-grid">
+        <div class="field"><label for="firstName">First name</label><input type="text" id="firstName" placeholder="Isla" autocomplete="off"></div>
+        <div class="field"><label for="lastName">Surname</label><input type="text" id="lastName" placeholder="Murray" autocomplete="off"></div>
+        <div class="field"><label for="hon1">Family name to honour</label><input type="text" id="hon1" placeholder="Margaret" autocomplete="off"></div>
+      </div>
+      <div class="tool-grid" style="margin-top:14px;">
+        <div class="field" style="grid-column: 1 / -1;"><label for="hon2">Second family name (optional — for a double middle)</label><input type="text" id="hon2" placeholder="Patricia" autocomplete="off"></div>
+      </div>
+      <div class="tool-actions">
+        <button class="btn" id="checkBtn">Compare the options</button>
+        <button class="btn coral" id="speakBtn" type="button">🔊 Hear the best option</button>
+      </div>
+      <p id="speakStatus" style="font-size:0.85rem;color:var(--ink-soft);margin:8px 0 0;"></p>
+      <div class="result" id="result" aria-live="polite"><div id="orders"></div></div>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="wrap narrow">
+
+<!-- AD SLOT: paste AdSense responsive unit here after approval -->
+<div class="ad-slot">Advertisement</div>
+
+<h2>The three diplomatic escapes from the two-grandmothers problem</h2>
+<p>Naming forums are full of the same anguished thread: both sides of the family expect the honour, there's one middle-name slot, and someone's feelings are on the line. Three moves resolve it in practice:</p>
+<ul class="content-list">
+  <li><strong>Use both, and let sound pick the order.</strong> A double middle honours everyone; the tool above tells you which order flows better. "We put Margaret first because Patricia collides with the surname" is an explanation nobody can argue with — parents who've done it report exactly this reasoning kept the peace.</li>
+  <li><strong>Use one now, bank one deliberately.</strong> If more children are hoped for, saying so out loud ("Patricia is reserved for a sister") converts a snub into a plan.</li>
+  <li><strong>Modernise the harder name.</strong> Loved your nan, can't love "Gertrude"? A variant keeps the thread of honour with a name your child will enjoy carrying — table below.</li>
+</ul>
+
+<h2>Modernising a dated family name</h2>
+<p>Every variant here has a genuine link to the original — a diminutive, a shared root, or an international form — so the honour survives the update:</p>
+<div class="table-scroll">
+<table class="mod-table">
+  <thead><tr><th>Family name</th><th>Modern variants that keep the link</th></tr></thead>
+  <tbody>
+    <tr><td>Margaret</td><td>Margot, Greta, Maisie, Daisy, Meg, Rita</td></tr>
+    <tr><td>Dorothy</td><td>Thea, Dora, Dot, Dolly</td></tr>
+    <tr><td>Gertrude</td><td>Trudy, True, Gerda</td></tr>
+    <tr><td>Mildred</td><td>Millie, Mila</td></tr>
+    <tr><td>Agnes</td><td>Annis, Ines, Nessa</td></tr>
+    <tr><td>Winifred</td><td>Winnie, Freda, Wren (sound-link)</td></tr>
+    <tr><td>Edith</td><td>Edie, Eda</td></tr>
+    <tr><td>Ethel</td><td>Etta, Elle (sound-link)</td></tr>
+    <tr><td>Doris</td><td>Dorie, Della</td></tr>
+    <tr><td>Harold</td><td>Harry, Hal</td></tr>
+    <tr><td>Ronald</td><td>Ronnie, Roan (sound-link)</td></tr>
+    <tr><td>Leonard</td><td>Leo, Lennie, Lenny</td></tr>
+    <tr><td>Reginald</td><td>Reggie, Rex</td></tr>
+    <tr><td>Wilfred</td><td>Wilf, Fred, Wiley</td></tr>
+    <tr><td>Ernest</td><td>Ernie, Ern, Nesto</td></tr>
+    <tr><td>Herbert</td><td>Bertie, Herb</td></tr>
+    <tr><td>Norman</td><td>Norrie, Nor</td></tr>
+    <tr><td>Albert</td><td>Bertie, Al, Alba (f)</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Type any variant into the tool above with your surname to check the flow — or run it through the <a href="index.html">full generator</a> alongside non-family options.</p>
+
+<h2>The etiquette, briefly and honestly</h2>
+<p>Parents who've navigated this report two things consistently. First, the order of a double middle carries no traditional meaning — families who ask are almost always satisfied by "this order sounded better," especially with a concrete reason attached. Second, the surviving hurt in these stories comes from surprise, not from the choice itself: telling grandparents the plan (and the sound-based reason) before the announcement costs nothing and prevents most of the grief. And if you're honouring with a <em>double</em> middle, read the practical side first: <a href="can-you-have-two-middle-names.html">can you have two middle names?</a></p>
+
+<h2>Frequently asked questions</h2>
+<details class="faq"><summary>How do you choose between two family names?</summary><div class="faq-body"><p>Use both as a double middle and let sound choose the order, reserve one for a future child out loud, or modernise the harder name with a linked variant. All three keep the honour and the peace.</p></div></details>
+<details class="faq"><summary>Does the order of two middle names mean anything?</summary><div class="faq-body"><p>No ranking is implied by tradition — and parents overwhelmingly report ordering by sound. Sharing that reason is the diplomacy.</p></div></details>
+
+
+<h2>Popular middle name lists</h2>
+<div class="related-block callout">
+  <p>Curated, scored and testable with your surname: <a href="middle-names-grace.html">Grace</a> · <a href="middle-names-florence.html">Florence</a> · <a href="middle-names-arthur.html">Arthur</a> · <a href="middle-names-henry.html">Henry</a> · <a href="middle-names-olivia.html">Olivia</a> · <a href="middle-names-george.html">George</a> · <a href="directory.html">all 22 lists</a></p>
+  <p><strong>Browse by theme:</strong> <a href="nature-middle-names.html">nature</a> · <a href="vintage-middle-names.html">vintage</a> · <a href="biblical-middle-names-for-girls.html">biblical (girls)</a> · <a href="biblical-middle-names-for-boys.html">biblical (boys)</a> · <a href="hebrew-middle-names.html">Hebrew</a> · <a href="muslim-middle-names.html">Muslim and Arabic</a></p>
+</div>
+<h2>More names and tools</h2>
+<div class="card-grid">
+  <a class="tool-link-card" href="vintage-middle-names.html"><span class="emoji" aria-hidden="true">🕰️</span><h3>Vintage Middle Names</h3><p>The full old-name treasury, testable live.</p></a>
+  <a class="tool-link-card" href="can-you-have-two-middle-names.html"><span class="emoji" aria-hidden="true">📋</span><h3>Two Middle Names Guide</h3><p>Passports, forms and airline quirks — the practical truth.</p></a>
+  <a class="tool-link-card" href="index.html"><span class="emoji" aria-hidden="true">✨</span><h3>Middle Name Generator</h3><p>Non-family options, scored against your surname.</p></a>
+</div>
+
+</div>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <p style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:10px;">Middle Names Generator</p>
+      <p style="max-width:280px;">Free tools that let you hear, test and stress-check a baby name before it's forever. Scored, explained, and spoken aloud.</p>
+    </div>
+    <div>
+      <h4>Tools &amp; Games</h4>
+      <ul>
+        <li><a href="index.html">Middle name generator</a></li>
+        <li><a href="two-middle-names-generator.html">Two middle names generator</a></li>
+        <li><a href="name-battle.html">Baby name battle game</a></li>
+        <li><a href="full-name-checker.html">Baby name checker</a></li>
+        <li><a href="initials-checker.html">Initials checker</a></li>
+        <li><a href="sibling-name-checker.html">Sibling name checker</a></li>
+        <li><a href="say-my-name.html">Say my name aloud</a></li>
+        <li><a href="compare-names.html">Compare two names</a></li>
+        <li><a href="nickname-predictor.html">Nickname checker</a></li>
+        <li><a href="honour-name-helper.html">Honour name helper</a></li>
+        <li><a href="name-report.html">Printable name report</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Middle Names by Name</h4>
+      <ul>
+        <li><a href="middle-names-olivia.html">Middle names for Olivia</a></li>
+        <li><a href="middle-names-amelia.html">Middle names for Amelia</a></li>
+        <li><a href="middle-names-isla.html">Middle names for Isla</a></li>
+        <li><a href="middle-names-ava.html">Middle names for Ava</a></li>
+        <li><a href="middle-names-freya.html">Middle names for Freya</a></li>
+        <li><a href="middle-names-noah.html">Middle names for Noah</a></li>
+        <li><a href="middle-names-oliver.html">Middle names for Oliver</a></li>
+        <li><a href="middle-names-george.html">Middle names for George</a></li>
+        <li><a href="middle-names-leo.html">Middle names for Leo</a></li>
+        <li><a href="middle-names-muhammad.html">Middle names for Muhammad</a></li>
+        <li><a href="middle-names-emmanuel.html">Middle names for Emmanuel</a></li>
+        <li><a href="middle-names-lily.html">Middle names for Lily</a></li>
+        <li><a href="middle-names-ivy.html">Middle names for Ivy</a></li>
+        <li><a href="middle-names-florence.html">Middle names for Florence</a></li>
+        <li><a href="middle-names-willow.html">Middle names for Willow</a></li>
+        <li><a href="middle-names-mia.html">Middle names for Mia</a></li>
+        <li><a href="middle-names-grace.html">Middle names for Grace</a></li>
+        <li><a href="middle-names-arthur.html">Middle names for Arthur</a></li>
+        <li><a href="middle-names-theodore.html">Middle names for Theodore</a></li>
+        <li><a href="middle-names-oscar.html">Middle names for Oscar</a></li>
+        <li><a href="middle-names-henry.html">Middle names for Henry</a></li>
+        <li><a href="middle-names-archie.html">Middle names for Archie</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Name Ideas &amp; Meanings</h4>
+      <ul>
+        <li><a href="name-meanings.html">Name meanings lookup</a></li>
+        <li><a href="names-by-meaning.html">Names by meaning</a></li>
+        <li><a href="names-by-origin.html">Names by origin</a></li>
+        <li><a href="biblical-middle-names-for-boys.html">Biblical middle names (boys)</a></li>
+        <li><a href="biblical-middle-names-for-girls.html">Biblical middle names (girls)</a></li>
+        <li><a href="muslim-middle-names.html">Muslim &amp; Arabic middle names</a></li>
+        <li><a href="hebrew-middle-names.html">Hebrew middle names</a></li>
+        <li><a href="nature-middle-names.html">Nature middle names</a></li>
+        <li><a href="vintage-middle-names.html">Vintage middle names</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Guides &amp; Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#free-features">All free features</a></li>
+        <li><a href="how-to-choose-a-middle-name.html">How to choose a middle name</a></li>
+        <li><a href="can-you-have-two-middle-names.html">Two middle names guide</a></li>
+        <li><a href="directory.html">Browse everything</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy policy</a></li>
+        <li><a href="cookie-policy.html">Cookie policy</a></li>
+        <li><a href="terms.html">Terms of use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-note">
+    <p>&copy; 2026 Middle Names Generator. Tools are for guidance and fun — nothing here is professional advice.</p>
+  </div>
+</footer>
+
+<div id="consent-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies to show ads that keep these tools free. Your name inputs are never collected. <a href="cookie-policy.html">Cookie policy</a></p>
+  <button class="btn small coral" data-choice="accept">Accept</button>
+  <button class="btn small ghost" data-choice="reject" style="color:#E8E6F5;border-color:#55527A;">Essential only</button>
+</div>
+
+<script src="engine.js?v=9"></script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const VOWELS = "aeiou";
+  const cap = s => NTF.cap(s);
+  let bestFull = "";
+
+  function junctionIssues(seq) {
+    // seq: array of lowercase names; returns list of issue strings
+    const issues = [];
+    for (let i = 0; i < seq.length - 1; i++) {
+      const a = seq[i], b = seq[i + 1];
+      const endA = a.slice(-1), startB = b.charAt(0);
+      if (endA === startB) issues.push(cap(a) + " → " + cap(b) + " share the sound \u201C" + endA.toUpperCase() + "\u201D and can blur");
+      else if (VOWELS.includes(endA) && VOWELS.includes(startB)) issues.push(cap(a) + " → " + cap(b) + " is a vowel-to-vowel join — say it aloud");
+    }
+    return issues;
+  }
+
+  function orderCard(label, seq, isBest) {
+    const issues = junctionIssues(seq);
+    const syl = seq.map(NTF.syllables).join("–");
+    const full = seq.map(cap).join(" ");
+    const div = document.createElement("div");
+    div.className = "order-card" + (isBest ? " best" : "");
+    div.innerHTML = "<h3><span></span>" + (isBest ? '<span class="badge">Smoother order</span>' : "") + "</h3>" +
+      '<p style="margin:4px 0;font-size:0.9rem;color:var(--ink-soft);">Rhythm ' + syl + "</p>" +
+      '<div class="checks"></div>';
+    div.querySelector("h3 span").textContent = full;
+    const checks = issues.length
+      ? issues.map(t => ({ ok: false, title: t, detail: "Not a dealbreaker — a reason. Quote it if the family asks about the order." }))
+      : [{ ok: true, title: "Clean joins throughout", detail: "Every name ends and the next begins with distinct sounds." }];
+    NTF.renderChecks(div.querySelector(".checks"), checks);
+    return { div, issueCount: issues.length, full };
+  }
+
+  function run() {
+    const f = $("firstName").value.trim(), l = $("lastName").value.trim();
+    const h1 = $("hon1").value.trim(), h2 = $("hon2").value.trim();
+    if (!f || !l || !h1) { $("speakStatus").textContent = "Enter a first name, surname and at least one family name."; return; }
+    $("speakStatus").textContent = "";
+    const wrap = $("orders");
+    wrap.innerHTML = "";
+    if (!h2) {
+      // Single honour name: full engine score
+      const res = NTF.flowScore(f, h1, l);
+      const card = document.createElement("div");
+      card.className = "order-card best";
+      card.innerHTML = "<h3><span></span><span class=\"badge\">Score " + res.score + "</span></h3><div class=\"checks\"></div>";
+      card.querySelector("h3 span").textContent = res.names.join(" ");
+      NTF.renderChecks(card.querySelector(".checks"), res.checks);
+      wrap.appendChild(card);
+      bestFull = res.names.join(" ");
+    } else {
+      const seqA = [f, h1, h2, l].map(s => s.toLowerCase());
+      const seqB = [f, h2, h1, l].map(s => s.toLowerCase());
+      const a = orderCard("A", seqA, false), b = orderCard("B", seqB, false);
+      const bestIsA = a.issueCount <= b.issueCount;
+      const best = bestIsA ? orderCard("A", seqA, true) : a;
+      const other = bestIsA ? b : orderCard("B", seqB, true);
+      // rebuild in order: best first
+      const cards = bestIsA ? [orderCard("A", seqA, true), b] : [orderCard("B", seqB, true), a];
+      cards.forEach(c => wrap.appendChild(c.div));
+      bestFull = cards[0].full;
+      const note = document.createElement("p");
+      note.style.cssText = "margin-top:12px;font-size:0.9rem;color:var(--ink-soft);";
+      note.textContent = a.issueCount === b.issueCount
+        ? "Both orders are equally clean — this one is truly a heart decision (or a coin toss no relative can dispute)."
+        : "The highlighted order has fewer sound collisions — that's your diplomatic, quotable reason.";
+      wrap.appendChild(note);
+    }
+    $("result").classList.add("show");
+  }
+  $("checkBtn").addEventListener("click", run);
+  $("speakBtn").addEventListener("click", () => {
+    if (!bestFull) { run(); }
+    if (bestFull) NTF.speak(bestFull, $("speakStatus"));
+  });
+  ["firstName","lastName","hon1","hon2"].forEach(id => {
+    $(id).addEventListener("keydown", e => { if (e.key === "Enter") run(); });
+  });
+})();
+</script>
+<script>window.MNG_TURNSTILE_KEY = "";</script>
+<script src="gate.js?v=9"></script>
+</body>
+</html>
