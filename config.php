@@ -5,11 +5,11 @@
    ============================================================ */
 
 /* 1. Admin password for leads.php (change this!) */
-define('ADMIN_PASSWORD', 'CHANGE-ME-to-a-long-password');
+define('ADMIN_PASSWORD', 'April7051@April7051@');
 
 /* 2. Where signup notifications are sent (create in hPanel -> Emails) */
-define('NOTIFY_EMAIL', 'leads@middlenamesgenerator.com');
-define('FROM_EMAIL',   'leads@middlenamesgenerator.com');
+define('NOTIFY_EMAIL', 'info@middlenamesgenerator.com');
+define('FROM_EMAIL',   'info@middlenamesgenerator.com');
 
 /* 3. Site URL (used to build verification links) */
 define('SITE_URL', 'https://middlenamesgenerator.com');
