@@ -19,8 +19,8 @@ define('SITE_NAME', 'Middle Names Generator');
       Get keys: dash.cloudflare.com -> Turnstile -> Add site
       (free, no Cloudflare hosting needed, works on any domain)
       Leave BOTH blank to disable (not recommended). */
-define('TURNSTILE_SITE_KEY', '');   /* public key, safe in HTML */
-define('TURNSTILE_SECRET',   '');   /* secret key, server only  */
+define('0x4AAAAAAD1inMb0tcLEJJo0', '');   /* public key, safe in HTML */
+define('0x4AAAAAAD1inBq3G38WdeFX1EWF3QmDKRM',   '');   /* secret key, server only  */
 
 /* 5. Email verification: link must be clicked before unlock.
       This is what guarantees a zero-bot list. Keep true. */
